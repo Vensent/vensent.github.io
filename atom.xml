@@ -4,7 +4,7 @@
   <subtitle><![CDATA[And in the end, all that matters is what you have done.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://vensent.github.io/"/>
-  <updated>2014-05-21T15:22:58.472Z</updated>
+  <updated>2014-05-23T15:27:51.151Z</updated>
   <id>http://vensent.github.io/</id>
   
   <author>
@@ -13,6 +13,28 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[初识Git和Github <1>]]></title>
+    <link href="http://vensent.github.io/2014/05/22/%E5%88%9D%E8%AF%86git%E5%92%8Cgithub/"/>
+    <id>http://vensent.github.io/2014/05/22/初识git和github/</id>
+    <published>2014-05-22T15:52:15.000Z</published>
+    <updated>2014-05-22T16:53:40.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="前言">前言</h2>
+<p>前两年一直在WordPress上面写文章，自己搭起来的博客，又是自己买的域名和空间。本以为自己可以用这些花了钱的东西好好激励自己一把，让自己更好地去学技术并且通过自己的总结和思考来提高。结果“万万没想到”，事情远没有自己想的那么简单。从一开始每个月都还能坚持写一篇技术方面的总结，到后来每个月算上连载的小说才能保证每个月一篇，到了去年考研前期，基本上已经把自己上一篇写了什么东西都已经忘掉了。所以，现在的我，需要忘掉那个已经不再存在的<a href="http://www.vensentwang.com/" target="_blank">http://www.vensentwang.com/</a>，改头换面，从<a href="https://vensent.github.com/" target="_blank">https://vensent.github.com/</a>开始，真正让自己更好。</p>
+<p>从知道自己考研失败的那一刻开始，在找工作的过程中才发现了这几年自己的学习是多么的不靠谱：数据结构基本上一窍不通，面试时随便一道算法题都会让自己措手不及；自己想要做的方向，学习也不是很深，随便一些问题都会让我很尴尬地说一句“不知道”。举个例子来说吧，Java面试的时候，一个HashMap就可以让我准备好几天，翻来覆去，也许就是那些知识点，但是具体地让你去讲，你却没有办法把它说明白：<a id="more"></a>当你知道了HashTable和HashMap的区别无非就是一个线程安全并且HashTable不能使用空的Key和Value值；面试官会接着问你，HashMap是怎么实现的，其中添加和查找是怎么做到的？这个时候如果你只是知道了一个“冲突”、“冲突方法”；他们会接着问，再具体一点呢？这个时候就真的没有办法去解答了，因为在平时写代码做项目中，我们根本就不会想到这些，或者说我们根本就不会再往代码里面更深入地去看。因此，面对找工作的面试，如果只是为了找工作而找工作，准备虽然会在短时间有不错的效果，但是如果平时功夫不到位，学习方面积累和沉淀的不足会让自己的问题暴露得体无完肤。（这里附上一篇关于HashMap实现的博客，写得不错，但是这仅仅是为了解答上文中“再具体一点”，<a href="http://www.importnew.com/10620.html" target="_blank">Java HashMap的工作原理</a>。如果在这个基础上，“再具体一点”，那么你还需要去查其他资料。）</p>
+]]></content>
+    <summary type="html"><![CDATA[<h2 id="前言">前言</h2>
+<p>前两年一直在WordPress上面写文章，自己搭起来的博客，又是自己买的域名和空间。本以为自己可以用这些花了钱的东西好好激励自己一把，让自己更好地去学技术并且通过自己的总结和思考来提高。结果“万万没想到”，事情远没有自己想的那么简单。从一开始每个月都还能坚持写一篇技术方面的总结，到后来每个月算上连载的小说才能保证每个月一篇，到了去年考研前期，基本上已经把自己上一篇写了什么东西都已经忘掉了。所以，现在的我，需要忘掉那个已经不再存在的<a href="http://www.vensentwang.com/" target="_blank">http://www.vensentwang.com/</a>，改头换面，从<a href="https://vensent.github.com/" target="_blank">https://vensent.github.com/</a>开始，真正让自己更好。</p>
+<p>从知道自己考研失败的那一刻开始，在找工作的过程中才发现了这几年自己的学习是多么的不靠谱：数据结构基本上一窍不通，面试时随便一道算法题都会让自己措手不及；自己想要做的方向，学习也不是很深，随便一些问题都会让我很尴尬地说一句“不知道”。举个例子来说吧，Java面试的时候，一个HashMap就可以让我准备好几天，翻来覆去，也许就是那些知识点，但是具体地让你去讲，你却没有办法把它说明白：]]></summary>
+    
+      <category term="Git" scheme="http://vensent.github.io/tags/Git/"/>
+    
+      <category term="Github" scheme="http://vensent.github.io/tags/Github/"/>
+    
+      <category term="Github" scheme="http://vensent.github.io/categories/Github/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[东京爱情故事——写在结局之后]]></title>
