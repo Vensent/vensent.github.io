@@ -1,0 +1,463 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>从Java的反射机制说开去&lt;1&gt; | Vensent&#39;s Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="Vensent Wang">
+    
+    <meta name="description" content="最近在写Android的时候用到了一些关于Java反射机制的内容。Java的反射机制也是在面试过程中常考的，这里就好好地将它们回顾一下。
+什么是Java的反射机制Java比起其他的语言，最大的特点就是“面向对象”。而怎么合理地理解“面向对象”的概念则是需要大量的编程练习的积累。通俗地说，反射机制就是">
+    
+    
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="VensentWang" />
+    <meta name="twitter:title" content="从Java的反射机制说开去&lt;1&gt; | Vensent&#39;s Blog" />
+      
+    
+    
+    <link rel="alternative" href="vensent.github.io/atom.xml" title="Vensent&#39;s Blog" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      <div>
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Vensent&#39;s Blog">Vensent&#39;s Blog</a></h1>
+				<h2 class="blog-motto"><a href="/">And in the end, all that matters is what you have done.</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+						<li><a href="/about">About</a></li>
+					
+					<li><form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="hidden" name="q" value="site:vensent.github.io">
+					</form></li>
+				</ul>
+			</nav>
+</div>
+    </header>
+    <div id="wrap">
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+    <time datetime="2014-10-10T03:09:28.000Z" itemprop="datePublished">
+      <a href="/2014/10/10/从Java的反射机制说开去-1/" title="从Java的反射机制说开去&lt;1&gt;" itemprop="url" class="article-time">Oct 10 2014</a>
+    </time>
+
+  <h1 itemprop="name" class="article-name">
+    
+      <a href="/2014/10/10/从Java的反射机制说开去-1/" title="从Java的反射机制说开去&lt;1&gt;" itemprop="url"><span>从Java的反射机制说开去&lt;1&gt;</span></a>
+  </h1>
+</header>
+
+	<div class="article-content">
+		
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是Java的反射机制"><span class="toc-number">1.</span> <span class="toc-text">什么是Java的反射机制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#反射机制的Demo"><span class="toc-number">2.</span> <span class="toc-text">反射机制的Demo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#疑惑"><span class="toc-number">3.</span> <span class="toc-text">疑惑</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#反射用途1——冲破private的限制"><span class="toc-number">4.</span> <span class="toc-text">反射用途1——冲破private的限制</span></a></li></ol>
+		
+		</div>
+		
+		<p>最近在写Android的时候用到了一些关于Java反射机制的内容。Java的反射机制也是在面试过程中常考的，这里就好好地将它们回顾一下。</p>
+<h2 id="什么是Java的反射机制"><a href="#什么是Java的反射机制" class="headerlink" title="什么是Java的反射机制"></a>什么是Java的反射机制</h2><p>Java比起其他的语言，最大的特点就是“面向对象”。而怎么合理地理解“面向对象”的概念则是需要大量的编程练习的积累。<br>通俗地说，反射机制就是可以把一个类，类的成员（函数、变量），当成一个对象来操作，希望读者能理解。也就是说，类、类的成员，在运行需要的时候可以动态地去操作它们。<br>下面就用一个例子来具体地说明。</p>
+<h2 id="反射机制的Demo"><a href="#反射机制的Demo" class="headerlink" title="反射机制的Demo"></a>反射机制的Demo</h2><p>在这里只就类的函数的反射来说明一下。<br>先是一个自己写的Student类，无须赘述：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>&#123;</div><div class="line"></div><div class="line">	<span class="keyword">private</span> String name;</div><div class="line">	<span class="keyword">private</span> <span class="keyword">int</span> age;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> name;</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</div><div class="line">		<span class="keyword">this</span>.name = name;</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> age;</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(<span class="keyword">int</span> age)</span> </span>&#123;</div><div class="line">		<span class="keyword">this</span>.age = age;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Student</span><span class="params">()</span></span></div><div class="line">	&#123;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">print</span><span class="params">()</span></span></div><div class="line">	&#123;</div><div class="line">		System.out.println(<span class="string">"This Student is: "</span> + name + <span class="string">","</span>);</div><div class="line">		System.out.println(<span class="string">"This Student is "</span> + age + <span class="string">" years old."</span>);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>接下来就是关于反射的使用：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</div><div class="line"></div><div class="line">	<span class="comment">/**</span></div><div class="line">	 * <span class="doctag">@param</span> args</div><div class="line">	 */</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line"></div><div class="line">		<span class="keyword">try</span> &#123;</div><div class="line">		    <span class="comment">// 第一步：new一个Student，这一步不可少</span></div><div class="line">			Student demoStudent = <span class="keyword">new</span> Student();</div><div class="line">			<span class="comment">// 第二步：通过Class类来实现的反射机制，所以需要获得Student的Class</span></div><div class="line">			Class&lt;Student&gt; studentClass = Student.class;</div><div class="line">			<span class="comment">// 或者通过包名forName来获得：</span></div><div class="line">			<span class="comment">// Class&lt;?&gt; studentClass = Class.forName("com.test.inflect.Student");</span></div><div class="line">			<span class="comment">// 第三步：构造需要调用的方法的参数</span></div><div class="line">			Class nameArea = String.class;</div><div class="line">			Class ageArea = <span class="keyword">int</span>.class;</div><div class="line">			<span class="comment">// 第四步：使用getDeclaredMethod，这步是反射机制的精髓。该方法的参数分别是要获得的方法名，以及要获得的方法的参数类型，前者是String类型，后者是Class&lt;?&gt;类型</span></div><div class="line">			Method setNameMethod = studentClass.getDeclaredMethod(<span class="string">"setName"</span>, nameArea);</div><div class="line">			Method setAgeMethod = studentClass.getDeclaredMethod(<span class="string">"setAge"</span>, ageArea);</div><div class="line">			Method printMethod = studentClass.getDeclaredMethod(<span class="string">"print"</span>, (Class[]) <span class="keyword">null</span>);</div><div class="line">			<span class="comment">// setAccessible(true)并不一定需要，因为默认的就是true.</span></div><div class="line">			printMethod.setAccessible(<span class="keyword">true</span>);</div><div class="line">			setAgeMethod.setAccessible(<span class="keyword">true</span>);</div><div class="line">			setNameMethod.setAccessible(<span class="keyword">true</span>);</div><div class="line">			</div><div class="line">			<span class="comment">// 第五步：使用invoke调用方法。第一个参数是调用方法的发出者，后面的参数则依次是调用的方法的参数</span></div><div class="line">			setNameMethod.invoke(demoStudent, <span class="string">"Vensent"</span>);</div><div class="line">			setAgeMethod.invoke(demoStudent, <span class="number">23</span>);</div><div class="line">			printMethod.invoke(demoStudent, (Object[]) <span class="keyword">null</span>);</div><div class="line">		&#125; <span class="keyword">catch</span> (Exception e) &#123;</div><div class="line">			e.printStackTrace();</div><div class="line">		&#125; 		</div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>运行上述测试代码，可以得到如下结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">This Student is: Vensent,</div><div class="line">This Student is 23 years old.</div></pre></td></tr></table></figure></p>
+<h2 id="疑惑"><a href="#疑惑" class="headerlink" title="疑惑"></a>疑惑</h2><p>细心的读者可能会发现在上述的例子中，如果我们直接使用<code>demoStudent.setName(String)</code>、<code>demoStudent.setAge(int)</code>、<code>demoStudent.print()</code>不就完事了么，为什么还要去用什么反射机制？劳神费力不说，getDeclaredMethod、invoke还这么复杂，稍不留神就可能用错。<br>笔者一开始也是这样想的，而且这样的想法也持续了很长的时间。到底反射机制是在什么样的情况下可以使用的？<br>而在最近写Android的代码的时候却多次碰到了这种情况。通过下面一个例子来具体说明。        </p>
+<h2 id="反射用途1——冲破private的限制"><a href="#反射用途1——冲破private的限制" class="headerlink" title="反射用途1——冲破private的限制"></a>反射用途1——冲破private的限制</h2><p>假设我们在上述的Student代码中将两个set的方法变为private，如下所示：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>&#123;</div><div class="line"></div><div class="line">	<span class="keyword">private</span> String name;</div><div class="line">	<span class="keyword">private</span> <span class="keyword">int</span> age;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> name;</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</div><div class="line">		<span class="keyword">this</span>.name = name;</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> age;</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(<span class="keyword">int</span> age)</span> </span>&#123;</div><div class="line">		<span class="keyword">this</span>.age = age;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Student</span><span class="params">()</span></span></div><div class="line">	&#123;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">print</span><span class="params">()</span></span></div><div class="line">	&#123;</div><div class="line">		System.out.println(<span class="string">"This Student is: "</span> + name + <span class="string">","</span>);</div><div class="line">		System.out.println(<span class="string">"This Student is "</span> + age + <span class="string">" years old."</span>);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>没错，看到这里读者可能有一种恍然大悟的感觉。如果将两个set方法都换成了private来修饰的话，那么name和age两个成员变量是无法通过demoStudent直接调用set方法来进行赋值的了。<br>但是我们同样执行上述Test代码依然可以得到以下相同的结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">This Student is: Vensent,</div><div class="line">This Student is 23 years old.</div></pre></td></tr></table></figure></p>
+<p>这样做就冲破了代码中private的限制而可以调用到private方法。通过这样的方法绕过了安全的检查，好像多少有一点不安全的感觉。<br>例如上述的做法在实际的操作中还有很多的，读者在自己编程中可以多留意。<br>以上完成了第一节的内容，请继续阅读：<a href="http://vensent.github.io/2014/10/10/%E4%BB%8EJava%E7%9A%84%E5%8F%8D%E5%B0%84%E6%9C%BA%E5%88%B6%E8%AF%B4%E5%BC%80%E5%8E%BB-2/">从Java的反射机制说开去<2></2></a>。</p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/Java/">Java</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/java/">java</a><a href="/tags/反射机制/">反射机制</a>
+  </div>
+
+
+
+
+<div class="article-share" id="share">
+
+  <div data-url="http://vensent.github.io/2014/10/10/从Java的反射机制说开去-1/" data-title="从Java的反射机制说开去&lt;1&gt; | Vensent&#39;s Blog" data-tsina="undefined" class="share clearfix">
+  </div>
+
+</div>
+</footer>   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2014/10/10/从Java的反射机制说开去-2/" title="从Java的反射机制说开去&lt;2&gt;">
+  <strong>上一篇：</strong><br/>
+  <span>
+  从Java的反射机制说开去&lt;2&gt;</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2014/10/02/心花路放——开到荼蘼又何妨/"  title="心花路放——开到荼蘼又何妨">
+ <strong>下一篇：</strong><br/> 
+ <span>心花路放——开到荼蘼又何妨
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+<section class="comment">
+
+<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="2014/10/10/从Java的反射机制说开去-1/" data-title="从Java的反射机制说开去&lt;1&gt;" data-url="http://vensent.github.io/2014/10/10/从Java的反射机制说开去-1/"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"vensentwang"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- 多说公共JS代码 end -->
+
+
+</section>
+
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  <div class="rsspart">
+	<a href="vensent.github.io/atom.xml" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分类</p>
+		<ul>
+		
+			<li><a href="/categories/Java/" title="Java">Java<sup>2</sup></a></li>
+		
+			<li><a href="/categories/观影杂记/" title="观影杂记">观影杂记<sup>3</sup></a></li>
+		
+			<li><a href="/categories/骑行/" title="骑行">骑行<sup>1</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			<li><a href="/tags/Java/" title="Java">Java<sup>1</sup></a></li>
+		
+			<li><a href="/tags/java/" title="java">java<sup>1</sup></a></li>
+		
+			<li><a href="/tags/东京爱情故事/" title="东京爱情故事">东京爱情故事<sup>1</sup></a></li>
+		
+			<li><a href="/tags/东爱/" title="东爱">东爱<sup>1</sup></a></li>
+		
+			<li><a href="/tags/反射机制/" title="反射机制">反射机制<sup>2</sup></a></li>
+		
+			<li><a href="/tags/心花路放/" title="心花路放">心花路放<sup>1</sup></a></li>
+		
+			<li><a href="/tags/雏菊/" title="雏菊">雏菊<sup>1</sup></a></li>
+		
+			<li><a href="/tags/骑行/" title="骑行">骑行<sup>1</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  <div class="SinaWeibo">
+     <p class="asidetitle">新浪微博</p>
+          <iframe width="100%" height="550" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=2&ptype=1&speed=0&skin=1&isTitle=0&noborder=1&isWeibo=1&isFans=0&uid=1834767405&verifier=8704b6ca&dpc=1"></iframe>
+</div>
+
+
+  
+<div class="recentcomments">
+  <p class="asidetitle">最新评论</p>
+<!-- 多说最新评论 start -->
+	<div class="ds-recent-comments" data-num-items="8" data-show-avatars="1" data-show-time="1" data-show-title="1" data-show-admin="1" data-excerpt-length="70"></div>
+<!-- 多说最新评论 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"vensentwang"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+  <div class="linkslist">
+  <p class="asidetitle">友情链接</p>
+    <ul>
+      <li><a href="http://ragingcat.info" target="_blank" title="ragingcat">RagingCat's Blog</a></li>
+      <li><a href="http://www.thankcreate.com" target="_blank" title="Tron">Thankcreate's Blog</a></li>
+      <li><a href="http://www.dian.org.cn" target="_blank" title="Dian Group">华中科技大学Dian团队</a></li>
+    </ul>
+</div>
+
+
+</aside>
+</div>
+    </div>
+</div>
+    <footer><div id="footer" >
+	
+    <div class="social-font" class="clearfix">
+        
+        <a href="http://weibo.com/vensentwang" target="_blank" class="icon-weibo" title="weibo"></a>
+        
+        
+        <a href="https://github.com/Vensent" target="_blank" class="icon-github" title="github"></a>
+        
+        
+        
+        <a href="https://twitter.com/VensentWang" target="_blank" class="icon-twitter" title="twitter"></a>
+        
+        
+        
+        
+        <a href="mailto:vensent.wang@gmail.com" target="_blank" class="icon-email" title="Email Me"></a>
+        
+    </div>
+	<section class="info">
+		<p class="l1">
+            There is no time to think it over.
+        </p>
+            <!-- <br/> -->
+        <p class="l2">
+			And in the end, all that matters is what you have done.
+        </p>
+	</section>
+	 
+		<p class="copyright">Powered by <a href="http://zespia.tw/hexo/" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/RagingCat/hexo-theme-ragingcat" target="_blank" title="hexo-theme-ragingcat">Raging Cat</a> © 2017
+		
+		<a href="http://vensent.github.io/about" target="_blank" title="Vensent Wang">Vensent Wang</a>
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize();
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"vensentwang"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0]
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script>
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+});
+</script>
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-34328499-1', 'vensent.github.io');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript"
+   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+  </body>
+</html>
