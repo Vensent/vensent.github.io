@@ -7,9 +7,9 @@
 
 <html class="theme-next pisces use-motion" lang="zh-Hans">
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
@@ -19,8 +19,8 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -40,7 +40,7 @@
   
     
   
-  <link href="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
+  <link href="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
 
 
 
@@ -76,44 +76,48 @@
 
   
 
-<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="Java,反射机制," />
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css">
 
 
-
-
-
-  <link rel="alternate" href="/atom.xml" title="Vensent's Blog" type="application/atom+xml" />
-
-
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+  <meta name="keywords" content="浏览器,">
 
 
 
 
 
+  <link rel="alternate" href="/atom.xml" title="Vensent's Blog" type="application/atom+xml">
 
-<meta name="description" content="Android Hotspot的使用接上文：从Java的反射机制说开去。我们知道Android有很多的应用使用了Ap（Access Point）热点。而很多的应用也开始越来越多地使用Ap，比如最近很火的“闪传”，“QQ近传”等等。笔者在写这样的一个简单的开启热点的时候却遇到了问题。具体来说就是必须要使用到反射机制来解决，现在先看代码。 调用的代码1234567891011public static">
-<meta name="keywords" content="Java,反射机制">
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1">
+
+
+
+
+
+
+<meta name="description" content="枫树浏览器已经很长一段时间不更新了。相反，Chrome的内核却还是像嗑药一样不断地更新着。所以现在无论是在公司还是在自己的笔记本上面用2.0.9.20版本的浏览器也是因为内核没有更新了就慢了。 天行浏览器前段时间同事介绍给我使用了一款叫做XSkyWalker的浏览器，中文名叫做天行浏览器，用了快一个月也是真的醉了，忍无可忍之后将其卸了。总的来说，这款打着翻墙名号的浏览器也确实有其自己的特色，嵌入了">
+<meta name="keywords" content="浏览器">
 <meta property="og:type" content="article">
-<meta property="og:title" content="从Java的反射机制说开去&lt;2&gt;">
-<meta property="og:url" content="http://vensent.github.io/2014/10/10/从Java的反射机制说开去-2/index.html">
+<meta property="og:title" content="浏览器的那些事儿">
+<meta property="og:url" content="http://vensent.github.io/浏览器的那些事儿.html">
 <meta property="og:site_name" content="Vensent&#39;s Blog">
-<meta property="og:description" content="Android Hotspot的使用接上文：从Java的反射机制说开去。我们知道Android有很多的应用使用了Ap（Access Point）热点。而很多的应用也开始越来越多地使用Ap，比如最近很火的“闪传”，“QQ近传”等等。笔者在写这样的一个简单的开启热点的时候却遇到了问题。具体来说就是必须要使用到反射机制来解决，现在先看代码。 调用的代码1234567891011public static">
-<meta property="og:image" content="https://vensent.github.io/img/WifiManager_Methods.jpg">
-<meta property="og:image" content="https://vensent.github.io/img/WifiManager_nameList_1.jpg">
-<meta property="og:image" content="https://vensent.github.io/img/WifiManager_nameList_2.jpg">
-<meta property="og:updated_time" content="2017-07-09T07:00:31.360Z">
+<meta property="og:description" content="枫树浏览器已经很长一段时间不更新了。相反，Chrome的内核却还是像嗑药一样不断地更新着。所以现在无论是在公司还是在自己的笔记本上面用2.0.9.20版本的浏览器也是因为内核没有更新了就慢了。 天行浏览器前段时间同事介绍给我使用了一款叫做XSkyWalker的浏览器，中文名叫做天行浏览器，用了快一个月也是真的醉了，忍无可忍之后将其卸了。总的来说，这款打着翻墙名号的浏览器也确实有其自己的特色，嵌入了">
+<meta property="og:image" content="https://vensent.github.io/img/XSkywalker.jpg">
+<meta property="og:image" content="https://vensent.github.io/img/sougou.jpg">
+<meta property="og:image" content="https://vensent.github.io/img/360.jpg">
+<meta property="og:image" content="https://vensent.github.io/img/chrome.jpg">
+<meta property="og:image" content="https://vensent.github.io/img/chromeplus.jpg">
+<meta property="og:image" content="https://vensent.github.io/img/7Star.jpg">
+<meta property="og:image" content="https://vensent.github.io/img/coowon.jpg">
+<meta property="og:updated_time" content="2017-07-09T06:59:22.163Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="从Java的反射机制说开去&lt;2&gt;">
-<meta name="twitter:description" content="Android Hotspot的使用接上文：从Java的反射机制说开去。我们知道Android有很多的应用使用了Ap（Access Point）热点。而很多的应用也开始越来越多地使用Ap，比如最近很火的“闪传”，“QQ近传”等等。笔者在写这样的一个简单的开启热点的时候却遇到了问题。具体来说就是必须要使用到反射机制来解决，现在先看代码。 调用的代码1234567891011public static">
-<meta name="twitter:image" content="https://vensent.github.io/img/WifiManager_Methods.jpg">
+<meta name="twitter:title" content="浏览器的那些事儿">
+<meta name="twitter:description" content="枫树浏览器已经很长一段时间不更新了。相反，Chrome的内核却还是像嗑药一样不断地更新着。所以现在无论是在公司还是在自己的笔记本上面用2.0.9.20版本的浏览器也是因为内核没有更新了就慢了。 天行浏览器前段时间同事介绍给我使用了一款叫做XSkyWalker的浏览器，中文名叫做天行浏览器，用了快一个月也是真的醉了，忍无可忍之后将其卸了。总的来说，这款打着翻墙名号的浏览器也确实有其自己的特色，嵌入了">
+<meta name="twitter:image" content="https://vensent.github.io/img/XSkywalker.jpg">
 
 
 
@@ -141,13 +145,13 @@
 
 
 
-  <link rel="canonical" href="http://vensent.github.io/2014/10/10/从Java的反射机制说开去-2/"/>
+  <link rel="canonical" href="http://vensent.github.io/浏览器的那些事儿.html">
 
 
 
 
 
-  <title>从Java的反射机制说开去<2> | Vensent's Blog</title>
+  <title>浏览器的那些事儿 | Vensent's Blog</title>
   
 
 
@@ -175,7 +179,7 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
   
@@ -185,13 +189,13 @@
   <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">Vensent's Blog</span>
         <span class="logo-line-after"><i></i></span>
@@ -221,7 +225,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
             首页
           </a>
@@ -231,7 +235,7 @@
         <li class="menu-item menu-item-categories">
           <a href="/categories/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
             
             分类
           </a>
@@ -241,7 +245,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
             归档
           </a>
@@ -251,7 +255,7 @@
         <li class="menu-item menu-item-tags">
           <a href="/tags/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
             
             标签
           </a>
@@ -261,7 +265,7 @@
         <li class="menu-item menu-item-about">
           <a href="/about/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
             
             关于
           </a>
@@ -274,7 +278,7 @@
             <a href="javascript:;" class="popup-trigger">
           
             
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
             
             搜索
           </a>
@@ -295,9 +299,7 @@
       <i class="fa fa-times-circle"></i>
     </span>
     <div class="local-search-input-wrapper">
-      <input autocomplete="off"
-             placeholder="搜索..." spellcheck="false"
-             type="text" id="local-search-input">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
     </div>
   </div>
   <div id="local-search-result"></div>
@@ -329,16 +331,16 @@
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://vensent.github.io/2014/10/10/从Java的反射机制说开去-2/">
+  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://vensent.github.io/浏览器的那些事儿.html">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Vensent Wang">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/7401921?v=3&s=460">
     </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Vensent's Blog">
     </span>
 
@@ -347,7 +349,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">从Java的反射机制说开去<2></h2>
+          <h2 class="post-title" itemprop="name headline">浏览器的那些事儿</h2>
         
 
         <div class="post-meta">
@@ -359,8 +361,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2014-10-10T11:18:09+08:00">
-                Oct 10 2014
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2014-10-21T17:32:31+08:00">
+                Oct 21 2014
               </time>
             
 
@@ -370,7 +372,7 @@
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
             
               <span class="post-meta-divider">|</span>
             
@@ -381,9 +383,9 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/软件·工具/" itemprop="url" rel="index">
+                    <span itemprop="name">软件·工具</span>
                   </a>
                 </span>
 
@@ -399,7 +401,7 @@
 
           
           
-             <span id="/2014/10/10/从Java的反射机制说开去-2/" class="leancloud_visitors" data-flag-title="从Java的反射机制说开去<2>">
+             <span id="/浏览器的那些事儿.html" class="leancloud_visitors" data-flag-title="浏览器的那些事儿">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -427,15 +429,25 @@
       
 
       
-        <h2 id="Android-Hotspot的使用"><a href="#Android-Hotspot的使用" class="headerlink" title="Android Hotspot的使用"></a>Android Hotspot的使用</h2><p>接上文：<a href="http://vensent.github.io/2014/10/10/%E4%BB%8EJava%E7%9A%84%E5%8F%8D%E5%B0%84%E6%9C%BA%E5%88%B6%E8%AF%B4%E5%BC%80%E5%8E%BB-1/">从Java的反射机制说开去<1></1></a>。<br>我们知道Android有很多的应用使用了Ap（Access Point）热点。而很多的应用也开始越来越多地使用Ap，比如最近很火的“闪传”，“QQ近传”等等。笔者在写这样的一个简单的开启热点的时候却遇到了问题。具体来说就是必须要使用到反射机制来解决，现在先看代码。</p>
-<h2 id="调用的代码"><a href="#调用的代码" class="headerlink" title="调用的代码"></a>调用的代码</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">turnOnOffHotspot</span><span class="params">(Context context, <span class="keyword">boolean</span> isTurnToOn)</span> </span>&#123;</div><div class="line">    WifiManager wifiManager = (WifiManager) context</div><div class="line">    		.getSystemService(Context.WIFI_SERVICE);</div><div class="line">    WifiApControl apControl = WifiApControl.getApControl(wifiManager);</div><div class="line">    <span class="keyword">if</span> (apControl != <span class="keyword">null</span> ) &#123;</div><div class="line">    	<span class="comment">// 使用WifiManager来关闭wifi</span></div><div class="line">    	wifiManager.setWifiEnabled(<span class="keyword">false</span>);</div><div class="line">        apControl.setWifiApEnabled(apControl.getWifiApConfiguration(),</div><div class="line">                isTurnToOn);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<a id="more"></a>
-<p>其中WifiApControl是自己写好的一个类，代码比较长，不过如果理解了反射机制的话还是很好理解的，贴下来如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * This class is use to handle all Hotspot related information.</div><div class="line"> * </div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">WifiApControl</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Method getWifiApState;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Method isWifiApEnabled;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Method setWifiApEnabled;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Method getWifiApConfiguration;</div><div class="line"> </div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String WIFI_AP_STATE_CHANGED_ACTION = <span class="string">"android.net.wifi.WIFI_AP_STATE_CHANGED"</span>;</div><div class="line"> </div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> WIFI_AP_STATE_DISABLED = WifiManager.WIFI_STATE_DISABLED;</div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> WIFI_AP_STATE_DISABLING = WifiManager.WIFI_STATE_DISABLING;</div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> WIFI_AP_STATE_ENABLED = WifiManager.WIFI_STATE_ENABLED;</div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> WIFI_AP_STATE_ENABLING = WifiManager.WIFI_STATE_ENABLING;</div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> WIFI_AP_STATE_FAILED = WifiManager.WIFI_STATE_UNKNOWN;</div><div class="line"> </div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String EXTRA_PREVIOUS_WIFI_AP_STATE = WifiManager.EXTRA_PREVIOUS_WIFI_STATE;</div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String EXTRA_WIFI_AP_STATE = WifiManager.EXTRA_WIFI_STATE;</div><div class="line"> </div><div class="line">    <span class="keyword">static</span> &#123;</div><div class="line">        <span class="comment">// lookup methods and fields not defined publicly in the SDK.</span></div><div class="line">        Class&lt;?&gt; cls = WifiManager.class;</div><div class="line">        <span class="comment">// nameList用于打印出WifiManager中的所有方法</span></div><div class="line">        ArrayList&lt;String&gt; nameList = <span class="keyword">new</span> ArrayList&lt;String&gt;();</div><div class="line">        <span class="keyword">for</span> (Method method : cls.getDeclaredMethods()) &#123;</div><div class="line">            String methodName = method.getName();</div><div class="line">            nameList.add(methodName);</div><div class="line">            <span class="keyword">if</span> (methodName.equals(<span class="string">"getWifiApState"</span>)) &#123;</div><div class="line">                getWifiApState = method;</div><div class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (methodName.equals(<span class="string">"isWifiApEnabled"</span>)) &#123;</div><div class="line">                isWifiApEnabled = method;</div><div class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (methodName.equals(<span class="string">"setWifiApEnabled"</span>)) &#123;</div><div class="line">                setWifiApEnabled = method;</div><div class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (methodName.equals(<span class="string">"getWifiApConfiguration"</span>)) &#123;</div><div class="line">                getWifiApConfiguration = method;</div><div class="line">               </div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="comment">// 用在调试</span></div><div class="line">        nameList.add(<span class="string">"0"</span>);</div><div class="line">    &#125;</div><div class="line"> </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isApSupported</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> (getWifiApState != <span class="keyword">null</span> &amp;&amp; isWifiApEnabled != <span class="keyword">null</span></div><div class="line">                &amp;&amp; setWifiApEnabled != <span class="keyword">null</span> &amp;&amp; getWifiApConfiguration != <span class="keyword">null</span>);</div><div class="line">    &#125;</div><div class="line"> </div><div class="line">    <span class="keyword">private</span> WifiManager mgr;</div><div class="line"> </div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="title">WifiApControl</span><span class="params">(WifiManager mgr)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.mgr = mgr;</div><div class="line">    &#125;</div><div class="line"> </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> WifiApControl <span class="title">getApControl</span><span class="params">(WifiManager mgr)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> (!isApSupported())</div><div class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">new</span> WifiApControl(mgr);</div><div class="line">    &#125;</div><div class="line"> </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isWifiApEnabled</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            <span class="keyword">return</span> (Boolean) isWifiApEnabled.invoke(mgr);</div><div class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</div><div class="line">            Log.v(<span class="string">"BatPhone"</span>, e.toString(), e); <span class="comment">// shouldn't happen</span></div><div class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"> </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getWifiApState</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            <span class="keyword">return</span> (Integer) getWifiApState.invoke(mgr);</div><div class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</div><div class="line">            Log.v(<span class="string">"BatPhone"</span>, e.toString(), e); <span class="comment">// shouldn't happen</span></div><div class="line">            <span class="keyword">return</span> -<span class="number">1</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"> </div><div class="line">    <span class="function"><span class="keyword">public</span> WifiConfiguration <span class="title">getWifiApConfiguration</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            <span class="keyword">return</span> (WifiConfiguration) getWifiApConfiguration.invoke(mgr);</div><div class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</div><div class="line">            Log.v(<span class="string">"BatPhone"</span>, e.toString(), e); <span class="comment">// shouldn't happen</span></div><div class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"> </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">setWifiApEnabled</span><span class="params">(WifiConfiguration config, <span class="keyword">boolean</span> enabled)</span> </span>&#123;</div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            <span class="keyword">return</span> (Boolean) setWifiApEnabled.invoke(mgr, config, enabled);</div><div class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</div><div class="line">            Log.v(<span class="string">"BatPhone"</span>, e.toString(), e); <span class="comment">// shouldn't happen</span></div><div class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h2 id="代码分析"><a href="#代码分析" class="headerlink" title="代码分析"></a>代码分析</h2><p>通过反射机制，可以看出来在WifiApControl中是为了获得WifiManager类中的<code>getWifiApState</code>、<code>isWifiApEnabled</code>、<code>setWifiApEnabled</code>、<code>getWifiApConfiguration</code>这四个方法。但是其中WifiManager中没有这些方法么？我们具体点开可以看看，以下是代码中显示的WifiManager的所有方法：</p>
-<p><div style="text-align:center"><img src="https://vensent.github.io/img/WifiManager_Methods.jpg"></div><br>而以上四种方法是都没有的。<br>那没有的话为什么可以获取到呢？我们通过调试进入断点看一看：</p>
-<p><div style="text-align:center"><img src="https://vensent.github.io/img/WifiManager_nameList_1.jpg"><img src="https://vensent.github.io/img/WifiManager_nameList_2.jpg"></div><br>可以看出在用反射机制去获得WifiManager中的所有方法的时候，是可以得到的这四个方法的。<br>那么究竟是怎么一回事呢？</p>
-<h2 id="原因分析"><a href="#原因分析" class="headerlink" title="原因分析"></a>原因分析</h2><p>进入Android的platform_framworks_base的源码去看一下。代码在这里也可以看到：<a href="https://github.com/android/platform_frameworks_base/blob/master/wifi/java/android/net/wifi/WifiManager.java" target="_blank" rel="external">WifiManager.java</a>。<br>以<code>getWifiApState</code>为例，其中定义代码在如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Gets the Wi-Fi enabled state.</div><div class="line"> * <span class="doctag">@return</span> One of &#123;<span class="doctag">@link</span> #WIFI_AP_STATE_DISABLED&#125;,</div><div class="line"> *         &#123;<span class="doctag">@link</span> #WIFI_AP_STATE_DISABLING&#125;, &#123;<span class="doctag">@link</span> #WIFI_AP_STATE_ENABLED&#125;,</div><div class="line"> *         &#123;<span class="doctag">@link</span> #WIFI_AP_STATE_ENABLING&#125;, &#123;<span class="doctag">@link</span> #WIFI_AP_STATE_FAILED&#125;</div><div class="line"> * <span class="doctag">@see</span> #isWifiApEnabled()</div><div class="line"> *</div><div class="line"> * <span class="doctag">@hide</span> Dont open yet</div><div class="line"> */</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getWifiApState</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">try</span> &#123;</div><div class="line">        <span class="keyword">return</span> mService.getWifiApEnabledState();</div><div class="line">    &#125; <span class="keyword">catch</span> (RemoteException e) &#123;</div><div class="line">        <span class="keyword">return</span> WIFI_AP_STATE_FAILED;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>其中在注释中的<code>@hide Dont open yet</code>是就是我们找到的原因。原来API自己把这些方法隐藏了。而在Eclipse中通过.class的反编译的结果查看的时候是看不到这些方法的。<br>笔者猜测Google这样做的原因可能是因为这些API属于内部逻辑，不想对外暴露，也有可能是API接口还未最终确定下来。所以在低版本Android上的隐藏API不一定能在高版本的Android上使用。这点是一定要注意的。也就说隐藏API的兼容性比较差。因此利用反射调用隐藏API时，一定要注意根据Android的版本采用不同的方式去反射。</p>
+        <p>枫树浏览器已经很长一段时间不更新了。<br>相反，Chrome的内核却还是像嗑药一样不断地更新着。所以现在无论是在公司还是在自己的笔记本上面用2.0.9.20版本的浏览器也是因为内核没有更新了就慢了。</p>
+<h2 id="天行浏览器"><a href="#天行浏览器" class="headerlink" title="天行浏览器"></a>天行浏览器</h2><p><img align="left" src="https://vensent.github.io/img/XSkywalker.jpg"><br>前段时间同事介绍给我使用了一款叫做XSkyWalker的浏览器，中文名叫做天行浏览器，用了快一个月也是真的醉了，忍无可忍之后将其卸了。总的来说，这款打着翻墙名号的浏览器也确实有其自己的特色，嵌入了代理服务器之后使用过程中不用再开任何的其他的代理就可以嗖嗖嗖地翻墙了。不过在我看来，翻墙对于我来说从来不是难事，SwitchySharp+WallProxy的翻墙方式一直使用了好几年了。所以天行浏览器在我这里就是数不完的缺点了：<a id="more"></a></p>
+<ul>
+<li>没有鼠标手势：Chrome长期没有一个合适的鼠标手势的插件，对于一个长期使用鼠标手势的人来说没有这个简直不能活。</li>
+<li>启动的广告：之前我每天打开浏览器的首页都是鲜果抓取的最新博客资讯，好了这家伙总是定位到自己的广告页面，读者可以随意感受一下：<a href="http://www.0678.com/" rel="external nofollow noopener noreferrer" target="_blank">http://www.0678.com/</a>，呵呵。</li>
+<li>关于标签的操作选项：最明显的一个就是右键可以直接关闭标签页的操作，很遗憾天行浏览器并不支持此项功能。</li>
+<li>超级拖拽：这个功能也没有，浏览网页遇到了新词新意的时候怎么办，超级拖拽不能用只能大眼瞪小眼。</li>
+</ul>
+<h2 id="搜狗浏览器、360浏览器"><a href="#搜狗浏览器、360浏览器" class="headerlink" title="搜狗浏览器、360浏览器"></a>搜狗浏览器、360浏览器</h2><p><img align="left" src="https://vensent.github.io/img/sougou.jpg"><img align="left" src="https://vensent.github.io/img/360.jpg"><br>我最早开始接触的浏览器应该说是搜狗和360，这也不意外。毕竟在中国360浏览器还是使用最多的一款浏览器，搜狗也可以理解，很多用户装搜狗输入法的时候就自带着跟着装上了搜狗浏览器。但是也真的在很长一段使用搜狗浏览器的时间中，我觉得这款浏览器还是非常好用的。急速、IE模式（后来才发现这个完全不是搜狗的原创），最重要的是还有鼠标手势。我现在都还记得自己在第一次看到有人在使用浏览器的时候用到鼠标手势是一件多么酷炫的事情，可能只能用“目瞪口呆”来形容（原谅笔者的无知）。<br>而在后续的使用中也发现很多功能，比如：用户登录及同步，这个功能与书签的使用同步之后让用户在各地使用都显得非常方便。</p>
+<h2 id="Chrome、枫树浏览器"><a href="#Chrome、枫树浏览器" class="headerlink" title="Chrome、枫树浏览器"></a>Chrome、枫树浏览器</h2><p><img align="left" src="https://vensent.github.io/img/chrome.jpg"><img align="left" src="https://vensent.github.io/img/chromeplus.jpg"><br>浏览器也这样用了一阵子，直到遇到了Chrome。Chrome的介绍自不必多说，相信大家都有接触过。当年最早接触Chrome的时候，Chrome的市场占有率还排在IE、FireFox之后，甚至还被遨游抢去了第三。Chrome最大的优势是对于插件的支持，插件的出现可以说是重新定义了浏览器。从前浏览器功能仅仅是浏览网页，而伴随着纷繁复杂的插件的出现，浏览器变得更像是一个整合的桌面。<br>而开始用枫树浏览器也是在这之后。开始使用Chrome了之后就爱不释手，但是也有不足：有些网站必须要通过IE模式访问、鼠标手势的缺失，因此通过<a href="http://www.thankcreate.com" rel="external nofollow noopener noreferrer" target="_blank">创逼</a>的介绍开始使用了枫树浏览器。这一用就是扎扎实实的三年，也见证了枫树浏览器从ChromePlus更名为CoolNovo，再被腾讯收购了之后开发者抛弃了用户不再继续更新。<br>今年上半年枫树开始不再更新，慢慢地Chrome商店里面的很多新的插件已经不能再安装，坚持了半年以为可以等到枫树的更新的支持，却无果。来到公司发现枫树居然连Google账户的数据也无法再同步了，心情也真的有点Down。<br>毕竟是一款跟随了你这么长时间的产品，要说再见是真的有些不容易的。</p>
+<h2 id="7Star、coowon"><a href="#7Star、coowon" class="headerlink" title="7Star、coowon"></a>7Star、coowon</h2><p><img align="left" src="https://vensent.github.io/img/7Star.jpg"><img align="left" src="https://vensent.github.io/img/coowon.jpg"><br>最后笔者也去了趟“枫树”的百度贴吧，在其中看到了很多帖子有人说转去了七星浏览器（7Star），还有一些人开始用coowon。当然基于Chrome内核的浏览器还是有很多的，比如小巧的Chromium，呵呵，还有360极速浏览器，等等。笔者也最先是看到了7Star、coowon这两个浏览器：界面上看两款浏览器都是继承了Chrome的一贯风格，不过笔者也从以下几个不同方面来对二者进行一些简单的比较。</p>
+<ul>
+<li>coowon是国外产品（但是不得不说中文的翻译支持得真棒！），7Star是国内的产品，鉴于枫树浏览器也有过无良的表现（比如那个什么“神仙道”的游戏），国内产品也确实可能在发展壮大之后出现无良的可能更大。不过在对两款产品比较的时候发现，coowon的默认侧边栏却使用了自带的广告，反而7Star是没有的。</li>
+<li>鼠标手势的支持上来看，就像很多贴吧里面很多人的推测一样，7Star的开发者很可能就是枫树的那一帮人，所以鼠标手势和习惯更贴近我的使用习惯，也比coowon更全面和强大。举两个例子：在使用中两个手势“下左”和“下右”可以是不同的操作，7Star可以分别支持“关闭当前标签并激活左侧标签”和“关闭当前标签并激活右侧标签”，但是coowon却无法做到，只能做到“关闭当前标签并激活右侧标签”；另外，7Star支持“向下”最小化窗口，这个也是coowon做不到的。</li>
+<li>界面风格上面，感觉coowon的上方的插件的间距更合理；除此之外，整个UI的风格coowon也更好一些，当然这是我的个人感觉。毕竟coowon是一款国外的产品，这方面比国内还是多少强一些的。</li>
+<li>浏览器的运行速度：我分别在自己的电脑和公司的台式机上面进行了比较，发现在电脑配置比较低的时候两者的差异还是有细微的差别的：7Star的速度要比coowon慢一些，在笔记本电脑上面运行的时候还是会有一些卡顿的情况。</li>
+<li>IE支持：我看这也是贴吧里面很多的吧友在反复讨论的，因为国内很多的金融网站都是需要的（比如说支付宝、网银），安全因素还是有的。而用coowon的时候你会发现根本无法用IE模式啊，连个支付宝的支付页面都打不开，这就略微有点Eggache了。</li>
+</ul>
+<p>所以综上，比较二者，我还是选择了7Star并且使用到了现在。</p>
 
       
     </div>
@@ -458,13 +470,13 @@
     <div id="QR" style="display: none;">
       
         <div id="wechat" style="display: inline-block">
-          <img id="wechat_qr" src="http://ww1.sinaimg.cn/large/6d5c542dgy1fhdo3e6jgbj20yi1autdn.jpg" alt="Vensent Wang WeChat Pay"/>
+          <img id="wechat_qr" src="http://ww1.sinaimg.cn/large/6d5c542dgy1fhdo3e6jgbj20yi1autdn.jpg" alt="Vensent Wang WeChat Pay">
           <p>微信打赏</p>
         </div>
       
       
         <div id="alipay" style="display: inline-block">
-          <img id="alipay_qr" src="http://ww1.sinaimg.cn/large/6d5c542dgy1fhdo3uixw5j20go0p040q.jpg" alt="Vensent Wang Alipay"/>
+          <img id="alipay_qr" src="http://ww1.sinaimg.cn/large/6d5c542dgy1fhdo3uixw5j20go0p040q.jpg" alt="Vensent Wang Alipay">
           <p>支付宝打赏</p>
         </div>
       
@@ -483,11 +495,11 @@
 		  </li>
 		  <li class="post-copyright-link">
 			<strong>本文链接：</strong>
-			<a href="/2014/10/10/从Java的反射机制说开去-2/" title="从Java的反射机制说开去<2>">2014/10/10/从Java的反射机制说开去-2/</a>
+			<a href="/浏览器的那些事儿.html" title="浏览器的那些事儿">浏览器的那些事儿.html</a>
 		  </li>
 		  <li class="post-copyright-license">
 			<strong>版权声明： </strong>
-			本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0 CN</a> 许可协议。转载请注明出处！
+			本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" rel="external nofollow noopener noreferrer" target="_blank">CC BY-NC-SA 3.0 CN</a> 许可协议。转载请注明出处！
 		  </li>
 		</ul>
       
@@ -497,9 +509,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Java/" rel="tag"># Java</a>
-          
-            <a href="/tags/反射机制/" rel="tag"># 反射机制</a>
+            <a href="/tags/浏览器/" rel="tag"># 浏览器</a>
           
         </div>
       
@@ -512,8 +522,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2014/10/10/从Java的反射机制说开去-1/" rel="next" title="从Java的反射机制说开去<1>">
-                <i class="fa fa-chevron-left"></i> 从Java的反射机制说开去<1>
+              <a href="/从Java的反射机制说开去-2.html" rel="next" title="从Java的反射机制说开去-2">
+                <i class="fa fa-chevron-left"></i> 从Java的反射机制说开去-2
               </a>
             
           </div>
@@ -522,8 +532,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2014/10/21/浏览器的那些事儿/" rel="prev" title="浏览器的那些事儿">
-                浏览器的那些事儿 <i class="fa fa-chevron-right"></i>
+              <a href="/开始用信用卡的这一个月.html" rel="prev" title="开始用信用卡的这一个月">
+                开始用信用卡的这一个月 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -574,7 +584,7 @@
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
             文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
@@ -584,10 +594,8 @@
       
 
       <section class="site-overview sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="https://avatars0.githubusercontent.com/u/7401921?v=3&s=460"
-               alt="Vensent Wang" />
+        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="https://avatars0.githubusercontent.com/u/7401921?v=3&s=460" alt="Vensent Wang">
           <p class="site-author-name" itemprop="name">Vensent Wang</p>
            
               <p class="site-description motion-element" itemprop="description"></p>
@@ -641,7 +649,7 @@
           
             
               <span class="links-of-author-item">
-                <a href="https://github.com/Vensent" target="_blank" title="GitHub">
+                <a href="https://github.com/Vensent" target="_blank" title="GitHub" rel="external nofollow noopener noreferrer">
                   
                     <i class="fa fa-fw fa-github"></i>
                   
@@ -650,7 +658,7 @@
               </span>
             
               <span class="links-of-author-item">
-                <a href="https://stackoverflow.com/users/3998710/vensent-wang" target="_blank" title="SOF">
+                <a href="https://stackoverflow.com/users/3998710/vensent-wang" target="_blank" title="SOF" rel="external nofollow noopener noreferrer">
                   
                     <i class="fa fa-fw fa-globe"></i>
                   
@@ -659,7 +667,7 @@
               </span>
             
               <span class="links-of-author-item">
-                <a href="http://weibo.com/vensentwang" target="_blank" title="微博">
+                <a href="http://weibo.com/vensentwang" target="_blank" title="微博" rel="external nofollow noopener noreferrer">
                   
                     <i class="fa fa-fw fa-globe"></i>
                   
@@ -668,7 +676,7 @@
               </span>
             
               <span class="links-of-author-item">
-                <a href="https://www.douban.com/people/vensent_wang/" target="_blank" title="豆瓣">
+                <a href="https://www.douban.com/people/vensent_wang/" target="_blank" title="豆瓣" rel="external nofollow noopener noreferrer">
                   
                     <i class="fa fa-fw fa-globe"></i>
                   
@@ -692,11 +700,11 @@
             <ul class="links-of-blogroll-list">
               
                 <li class="links-of-blogroll-item">
-                  <a href="http://www.thankcreate.com" title="ThankCreate" target="_blank">ThankCreate</a>
+                  <a href="http://www.thankcreate.com" title="ThankCreate" target="_blank" rel="external nofollow noopener noreferrer">ThankCreate</a>
                 </li>
               
                 <li class="links-of-blogroll-item">
-                  <a href="http://www.dian.org.cn" title="HUST Dian团队" target="_blank">HUST Dian团队</a>
+                  <a href="http://www.dian.org.cn" title="HUST Dian团队" target="_blank" rel="external nofollow noopener noreferrer">HUST Dian团队</a>
                 </li>
               
             </ul>
@@ -718,7 +726,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Android-Hotspot的使用"><span class="nav-number">1.</span> <span class="nav-text">Android Hotspot的使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#调用的代码"><span class="nav-number">2.</span> <span class="nav-text">调用的代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码分析"><span class="nav-number">3.</span> <span class="nav-text">代码分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原因分析"><span class="nav-number">4.</span> <span class="nav-text">原因分析</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#天行浏览器"><span class="nav-number">1.</span> <span class="nav-text">天行浏览器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#搜狗浏览器、360浏览器"><span class="nav-number">2.</span> <span class="nav-text">搜狗浏览器、360浏览器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Chrome、枫树浏览器"><span class="nav-number">3.</span> <span class="nav-text">Chrome、枫树浏览器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7Star、coowon"><span class="nav-number">4.</span> <span class="nav-text">7Star、coowon</span></a></li></ol></div>
             
 
           </div>
@@ -738,7 +746,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
+        <div class="copyright">
   
   &copy;  2015 - 
   <span itemprop="copyrightYear">2017</span>
@@ -750,12 +758,12 @@
 
 
 <div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+  由 <a class="theme-link" href="https://hexo.io" rel="external nofollow noopener noreferrer" target="_blank">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
   主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" rel="external nofollow noopener noreferrer" target="_blank">
     NexT.Pisces
   </a>
 </div>

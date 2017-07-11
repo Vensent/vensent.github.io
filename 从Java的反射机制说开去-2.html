@@ -7,9 +7,9 @@
 
 <html class="theme-next pisces use-motion" lang="zh-Hans">
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
@@ -19,8 +19,8 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -40,7 +40,7 @@
   
     
   
-  <link href="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
+  <link href="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
 
 
 
@@ -76,40 +76,44 @@
 
   
 
-<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="信用卡," />
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css">
 
 
-
-
-
-  <link rel="alternate" href="/atom.xml" title="Vensent's Blog" type="application/atom+xml" />
-
-
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+  <meta name="keywords" content="Java,反射机制,">
 
 
 
 
 
+  <link rel="alternate" href="/atom.xml" title="Vensent's Blog" type="application/atom+xml">
 
-<meta name="description" content="写在前面在开始这篇文章之前，我想讲几个题外话。不久之前看到张晓晗队长（一个我很喜欢的90后美少女作家，微博ID：@张晓晗Oliver）的一篇文章，上面有大概这样的一些文字：刚毕业的是时候人真的没有什么钱，每天过的都是饱一顿饿一顿的生活，四处奔波写剧本。最不济的时候我和男朋友不得不把几张银行卡里面的钱全部转一块儿，只为了在ATM机里面能取出一张100。大二时候在深圳实习，错过了从深圳回武汉的火车，无">
-<meta name="keywords" content="信用卡">
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1">
+
+
+
+
+
+
+<meta name="description" content="Android Hotspot的使用接上文：从Java的反射机制说开去。我们知道Android有很多的应用使用了Ap（Access Point）热点。而很多的应用也开始越来越多地使用Ap，比如最近很火的“闪传”，“QQ近传”等等。笔者在写这样的一个简单的开启热点的时候却遇到了问题。具体来说就是必须要使用到反射机制来解决，现在先看代码。 调用的代码1234567891011public static">
+<meta name="keywords" content="Java,反射机制">
 <meta property="og:type" content="article">
-<meta property="og:title" content="开始用信用卡的这一个月">
-<meta property="og:url" content="http://vensent.github.io/2014/10/31/开始用信用卡的这一个月/index.html">
+<meta property="og:title" content="从Java的反射机制说开去-2">
+<meta property="og:url" content="http://vensent.github.io/从Java的反射机制说开去-2.html">
 <meta property="og:site_name" content="Vensent&#39;s Blog">
-<meta property="og:description" content="写在前面在开始这篇文章之前，我想讲几个题外话。不久之前看到张晓晗队长（一个我很喜欢的90后美少女作家，微博ID：@张晓晗Oliver）的一篇文章，上面有大概这样的一些文字：刚毕业的是时候人真的没有什么钱，每天过的都是饱一顿饿一顿的生活，四处奔波写剧本。最不济的时候我和男朋友不得不把几张银行卡里面的钱全部转一块儿，只为了在ATM机里面能取出一张100。大二时候在深圳实习，错过了从深圳回武汉的火车，无">
-<meta property="og:updated_time" content="2017-07-09T06:59:15.818Z">
+<meta property="og:description" content="Android Hotspot的使用接上文：从Java的反射机制说开去。我们知道Android有很多的应用使用了Ap（Access Point）热点。而很多的应用也开始越来越多地使用Ap，比如最近很火的“闪传”，“QQ近传”等等。笔者在写这样的一个简单的开启热点的时候却遇到了问题。具体来说就是必须要使用到反射机制来解决，现在先看代码。 调用的代码1234567891011public static">
+<meta property="og:image" content="https://vensent.github.io/img/WifiManager_Methods.jpg">
+<meta property="og:image" content="https://vensent.github.io/img/WifiManager_nameList_1.jpg">
+<meta property="og:image" content="https://vensent.github.io/img/WifiManager_nameList_2.jpg">
+<meta property="og:updated_time" content="2017-07-11T03:24:20.928Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="开始用信用卡的这一个月">
-<meta name="twitter:description" content="写在前面在开始这篇文章之前，我想讲几个题外话。不久之前看到张晓晗队长（一个我很喜欢的90后美少女作家，微博ID：@张晓晗Oliver）的一篇文章，上面有大概这样的一些文字：刚毕业的是时候人真的没有什么钱，每天过的都是饱一顿饿一顿的生活，四处奔波写剧本。最不济的时候我和男朋友不得不把几张银行卡里面的钱全部转一块儿，只为了在ATM机里面能取出一张100。大二时候在深圳实习，错过了从深圳回武汉的火车，无">
+<meta name="twitter:title" content="从Java的反射机制说开去-2">
+<meta name="twitter:description" content="Android Hotspot的使用接上文：从Java的反射机制说开去。我们知道Android有很多的应用使用了Ap（Access Point）热点。而很多的应用也开始越来越多地使用Ap，比如最近很火的“闪传”，“QQ近传”等等。笔者在写这样的一个简单的开启热点的时候却遇到了问题。具体来说就是必须要使用到反射机制来解决，现在先看代码。 调用的代码1234567891011public static">
+<meta name="twitter:image" content="https://vensent.github.io/img/WifiManager_Methods.jpg">
 
 
 
@@ -137,13 +141,13 @@
 
 
 
-  <link rel="canonical" href="http://vensent.github.io/2014/10/31/开始用信用卡的这一个月/"/>
+  <link rel="canonical" href="http://vensent.github.io/从Java的反射机制说开去-2.html">
 
 
 
 
 
-  <title>开始用信用卡的这一个月 | Vensent's Blog</title>
+  <title>从Java的反射机制说开去-2 | Vensent's Blog</title>
   
 
 
@@ -171,7 +175,7 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
   
@@ -181,13 +185,13 @@
   <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">Vensent's Blog</span>
         <span class="logo-line-after"><i></i></span>
@@ -217,7 +221,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
             首页
           </a>
@@ -227,7 +231,7 @@
         <li class="menu-item menu-item-categories">
           <a href="/categories/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
             
             分类
           </a>
@@ -237,7 +241,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
             归档
           </a>
@@ -247,7 +251,7 @@
         <li class="menu-item menu-item-tags">
           <a href="/tags/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
             
             标签
           </a>
@@ -257,7 +261,7 @@
         <li class="menu-item menu-item-about">
           <a href="/about/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
             
             关于
           </a>
@@ -270,7 +274,7 @@
             <a href="javascript:;" class="popup-trigger">
           
             
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
             
             搜索
           </a>
@@ -291,9 +295,7 @@
       <i class="fa fa-times-circle"></i>
     </span>
     <div class="local-search-input-wrapper">
-      <input autocomplete="off"
-             placeholder="搜索..." spellcheck="false"
-             type="text" id="local-search-input">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
     </div>
   </div>
   <div id="local-search-result"></div>
@@ -325,16 +327,16 @@
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://vensent.github.io/2014/10/31/开始用信用卡的这一个月/">
+  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://vensent.github.io/从Java的反射机制说开去-2.html">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Vensent Wang">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/7401921?v=3&s=460">
     </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Vensent's Blog">
     </span>
 
@@ -343,7 +345,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">开始用信用卡的这一个月</h2>
+          <h2 class="post-title" itemprop="name headline">从Java的反射机制说开去-2</h2>
         
 
         <div class="post-meta">
@@ -355,8 +357,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2014-10-31T17:57:36+08:00">
-                Oct 31 2014
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2014-10-10T11:18:09+08:00">
+                Oct 10 2014
               </time>
             
 
@@ -366,7 +368,7 @@
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
             
               <span class="post-meta-divider">|</span>
             
@@ -377,9 +379,9 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/随笔/" itemprop="url" rel="index">
-                    <span itemprop="name">随笔</span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
                   </a>
                 </span>
 
@@ -395,7 +397,7 @@
 
           
           
-             <span id="/2014/10/31/开始用信用卡的这一个月/" class="leancloud_visitors" data-flag-title="开始用信用卡的这一个月">
+             <span id="/从Java的反射机制说开去-2.html" class="leancloud_visitors" data-flag-title="从Java的反射机制说开去-2">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -423,20 +425,15 @@
       
 
       
-        <h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>在开始这篇文章之前，我想讲几个题外话。<br>不久之前看到张晓晗队长（一个我很喜欢的90后美少女作家，微博ID：<a href="http://weibo.com/zhangxiaohan1991?topnav=1&amp;wvr=6&amp;topsug=1" target="_blank" rel="external">@张晓晗Oliver</a>）的一篇文章，上面有大概这样的一些文字：刚毕业的是时候人真的没有什么钱，每天过的都是饱一顿饿一顿的生活，四处奔波写剧本。最不济的时候我和男朋友不得不把几张银行卡里面的钱全部转一块儿，只为了在ATM机里面能取出一张100。<br>大二时候在深圳实习，错过了从深圳回武汉的火车，无法把已经在网上订好的火车票取出来。无奈全身上下的零钱加上各张银行卡的余额都没有办法买上一张回程票。没有办法，自己只能打通还在广东朋友的电话，让他来火车站并将钱准备好了给自己买了一张票，真是非常的囧。<br>对，读者你或许可以明白了。如果在我们有了信用卡之后，这一切是不是就不会出现，生活也不会再有这种“钱到用时方恨少”的无奈？<a id="more"></a></p>
-<h2 id="信用卡的盈利来源"><a href="#信用卡的盈利来源" class="headerlink" title="信用卡的盈利来源"></a>信用卡的盈利来源</h2><p>相信了解信用卡的人都明白信用卡的宗旨就是鼓励人们“提前消费”，并且在下一个到期还款日到来之前还上上一个月的支出就可以了。这样做相当于消费者提前从银行贷了一部分钱进行消费并在下个月还上这笔贷款，整个过程中信用卡持有者却不出一分钱利息。但是我们有没有想过这样做的话银行是不是会亏死？<br>朋友们也讨论过这个问题。也确实，在中国，通过信用卡实现盈利的银行好像真的不多。银行通过信用卡的收入无非以下几个：</p>
-<ul>
-<li>消费者通过消费并分期偿还债务而产生的手续费</li>
-<li>银行通过超市、商场、商店收取的费用，每一笔消费要收取商家千分之三的手续费</li>
-</ul>
-<p>很明显，国内消费者现阶段使用信用卡都会很快地完成偿还上个月的债务，所以银行收取用户分期的手续费会不多。所以大部分收入还是来自上述的第二点来源。不过我们可以看到，现在的信用卡的发展方向已经变得越来越多样。以用户常用的招商银行信用卡来说，通过线上的渠道，信用卡更多地与线下的商家展开合作和交互，相信这样做也可以给银行带来更多的盈利。</p>
-<h2 id="信用卡与经济"><a href="#信用卡与经济" class="headerlink" title="信用卡与经济"></a>信用卡与经济</h2><p>如果稍微懂一点经济学知识的话，就会知道关于“通货膨胀”的概念。简单说，就是今年这个时候的100元，放到明年这个时候肯定不值这么多了。当然，我不是经济学专业出身的，一个很好的例子可以解释这个概念：如果你把自己的积蓄放在自己的衣柜里，一分不动，一年之后这些钱就会贬值不少。<br>所以从信用卡以及通货膨胀方面考虑，下一个月的钱一定没有上一个月的钱值钱，所以如果每一个月的花销都通过下一个月来偿还，这样做无疑是非常精明的做法，也可以利用“通胀”来为自己省钱。<br>当然，一个月的消费对于消费并不是那样的明显。以笔者为例，笔者在本月通过招行掌上生活的“12期免息购iPhone”购买了iPhone6 64G的手机。那么就这个活动而言，总价值6088的手机通过12期，每期507元左右的偿还方式一方面减轻了消费者的压力，另一方面，12期的分期方式，通过“通货膨胀”最后一期的507元已经过了整整一年，而这期507元肯定没有一年前的507元那样值钱，所以“免息分期”，银行一方面刺激了消费者消费的同时，也为消费者省了不少的钱。<br>关于这一点，知乎上面有一篇文章：<a href="http://zhuanlan.zhihu.com/kangjian/19865413" target="_blank" rel="external">国行的iphone6真的比水货更贵吗？</a>通过国行买iPhone6，信用卡无息分期的讨论来得出这样的一个观点：如果消费者的资产年收益率能够达到15%或者以上，可以使用更长期限的偿还方式，这也是笔者非常认可的一个观点：如果会理财，就不要害怕背上身上的债务。短期的债务不会打倒自己，反而可以给自己赢得通过现有资产产生更多的财产的时间。</p>
-<h2 id="信用卡的好处"><a href="#信用卡的好处" class="headerlink" title="信用卡的好处"></a>信用卡的好处</h2><p>如果谈上信用卡的好处，每个人根据自己使用的不同，可能会有不同的理解和感受。笔者就把这一个月使用的感受简单地说一下：</p>
-<h3 id="取钱的时候少了"><a href="#取钱的时候少了" class="headerlink" title="取钱的时候少了"></a>取钱的时候少了</h3><p>因为大部分的生活消费都是在超市，包括买菜购物都是可以刷卡的地方，所以就没有直接用钱来进行支付了（插一句，笔者处女座，有时候接触到钱都感觉脏脏的，接触完了就想洗手，所以信用卡的出现避免了自己这样的烦恼）。<br>因为取钱的时间少了，所以大部分钱都可以躺在“余额宝”里面等着升值。也因此笔者近段时间在尝试一些不同的理财方式，基金和股票也都有在看。希望自己可以可以利用这些钱在一个月的周期中找到更为可观的收益。</p>
-<h3 id="积分送好礼"><a href="#积分送好礼" class="headerlink" title="积分送好礼"></a>积分送好礼</h3><p>招行的信用卡有这样的好处，就是自身会有很多的活动可以给消费者进行选择，比如说积分换好礼、周末电影票等等，而这些活动笔者虽然因为积分较少没有参与过，但是招行这样搭建起来的一个生态还是非常可观的。让人觉得非常不错。</p>
-<h3 id="分期付款"><a href="#分期付款" class="headerlink" title="分期付款"></a>分期付款</h3><p>关于分期付款，褒贬不一。而信用卡的出现也自然产生了这样的一个问题：<br><strong>究竟要不要使用分期付款？分期付款是否真的让自己生活更加被动？</strong><br>其实这个问题各有各的回答方法。这里也有一篇文章来参考：<a href="http://zhuanlan.zhihu.com/kangjian/19873281" target="_blank" rel="external">分期付款的意义</a>。简单说，当你的收益率只能通过余额宝来获得不到5%的时候，选择分期无疑是得不偿失的。而如果你的收益率远远超过信用卡12期或者24期的手续费6.55%（招行信用卡的貌似更高一些，达到了8%，或者更高）的时候，那么，选择分期无疑是可以减轻你的负担。<br>当然，通胀的红利，通过主动固化债务，拉长付款周期，带来的好处我们在此处就不再赘述了。<br>结合文中的观点，我认为：如果合理利用分期付款，并规划好了自己的财务计划，你会变得越来越有钱。但是如果利用不好，你将成为债务的奴隶。<br>还是那句话：菜刀是无辜的，砍人还是做饭全在他的主人。</p>
-<h3 id="还款方便"><a href="#还款方便" class="headerlink" title="还款方便"></a>还款方便</h3><p>目前国内各家银行信用卡已经可以支持各种还款方式，比如说支付宝手机钱包就可以支持信用卡的到期自动还款，并且可以自己设定信用卡的还款日期。而招行自己的掌上生活手机客户端也可以支持这样的服务，这些信用卡的服务也是大大地方便了消费者。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>有的人非常害怕使用信用卡，怕控制不住自己消费的欲望，也怕面对一个月之后出现的账单。这样的心态都是不对的。<br>面对消费，关键还是习大大的那句话：打铁还需自身硬。<br>练好自己的基本功，结合自己的理财知识，才能够一步一步把自己的生活打造得更好，产生更大的收益，从而让自己活得更轻松。</p>
+        <h2 id="Android-Hotspot的使用"><a href="#Android-Hotspot的使用" class="headerlink" title="Android Hotspot的使用"></a>Android Hotspot的使用</h2><p>接上文：<a href="http://vensent.github.io/2014/10/10/%E4%BB%8EJava%E7%9A%84%E5%8F%8D%E5%B0%84%E6%9C%BA%E5%88%B6%E8%AF%B4%E5%BC%80%E5%8E%BB-1/">从Java的反射机制说开去<1></1></a>。<br>我们知道Android有很多的应用使用了Ap（Access Point）热点。而很多的应用也开始越来越多地使用Ap，比如最近很火的“闪传”，“QQ近传”等等。笔者在写这样的一个简单的开启热点的时候却遇到了问题。具体来说就是必须要使用到反射机制来解决，现在先看代码。</p>
+<h2 id="调用的代码"><a href="#调用的代码" class="headerlink" title="调用的代码"></a>调用的代码</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">turnOnOffHotspot</span><span class="params">(Context context, <span class="keyword">boolean</span> isTurnToOn)</span> </span>&#123;</div><div class="line">    WifiManager wifiManager = (WifiManager) context</div><div class="line">    		.getSystemService(Context.WIFI_SERVICE);</div><div class="line">    WifiApControl apControl = WifiApControl.getApControl(wifiManager);</div><div class="line">    <span class="keyword">if</span> (apControl != <span class="keyword">null</span> ) &#123;</div><div class="line">    	<span class="comment">// 使用WifiManager来关闭wifi</span></div><div class="line">    	wifiManager.setWifiEnabled(<span class="keyword">false</span>);</div><div class="line">        apControl.setWifiApEnabled(apControl.getWifiApConfiguration(),</div><div class="line">                isTurnToOn);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>其中WifiApControl是自己写好的一个类，代码比较长，不过如果理解了反射机制的话还是很好理解的，贴下来如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * This class is use to handle all Hotspot related information.</div><div class="line"> * </div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">WifiApControl</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Method getWifiApState;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Method isWifiApEnabled;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Method setWifiApEnabled;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Method getWifiApConfiguration;</div><div class="line"> </div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String WIFI_AP_STATE_CHANGED_ACTION = <span class="string">"android.net.wifi.WIFI_AP_STATE_CHANGED"</span>;</div><div class="line"> </div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> WIFI_AP_STATE_DISABLED = WifiManager.WIFI_STATE_DISABLED;</div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> WIFI_AP_STATE_DISABLING = WifiManager.WIFI_STATE_DISABLING;</div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> WIFI_AP_STATE_ENABLED = WifiManager.WIFI_STATE_ENABLED;</div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> WIFI_AP_STATE_ENABLING = WifiManager.WIFI_STATE_ENABLING;</div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> WIFI_AP_STATE_FAILED = WifiManager.WIFI_STATE_UNKNOWN;</div><div class="line"> </div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String EXTRA_PREVIOUS_WIFI_AP_STATE = WifiManager.EXTRA_PREVIOUS_WIFI_STATE;</div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String EXTRA_WIFI_AP_STATE = WifiManager.EXTRA_WIFI_STATE;</div><div class="line"> </div><div class="line">    <span class="keyword">static</span> &#123;</div><div class="line">        <span class="comment">// lookup methods and fields not defined publicly in the SDK.</span></div><div class="line">        Class&lt;?&gt; cls = WifiManager.class;</div><div class="line">        <span class="comment">// nameList用于打印出WifiManager中的所有方法</span></div><div class="line">        ArrayList&lt;String&gt; nameList = <span class="keyword">new</span> ArrayList&lt;String&gt;();</div><div class="line">        <span class="keyword">for</span> (Method method : cls.getDeclaredMethods()) &#123;</div><div class="line">            String methodName = method.getName();</div><div class="line">            nameList.add(methodName);</div><div class="line">            <span class="keyword">if</span> (methodName.equals(<span class="string">"getWifiApState"</span>)) &#123;</div><div class="line">                getWifiApState = method;</div><div class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (methodName.equals(<span class="string">"isWifiApEnabled"</span>)) &#123;</div><div class="line">                isWifiApEnabled = method;</div><div class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (methodName.equals(<span class="string">"setWifiApEnabled"</span>)) &#123;</div><div class="line">                setWifiApEnabled = method;</div><div class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (methodName.equals(<span class="string">"getWifiApConfiguration"</span>)) &#123;</div><div class="line">                getWifiApConfiguration = method;</div><div class="line">               </div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="comment">// 用在调试</span></div><div class="line">        nameList.add(<span class="string">"0"</span>);</div><div class="line">    &#125;</div><div class="line"> </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isApSupported</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> (getWifiApState != <span class="keyword">null</span> &amp;&amp; isWifiApEnabled != <span class="keyword">null</span></div><div class="line">                &amp;&amp; setWifiApEnabled != <span class="keyword">null</span> &amp;&amp; getWifiApConfiguration != <span class="keyword">null</span>);</div><div class="line">    &#125;</div><div class="line"> </div><div class="line">    <span class="keyword">private</span> WifiManager mgr;</div><div class="line"> </div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="title">WifiApControl</span><span class="params">(WifiManager mgr)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.mgr = mgr;</div><div class="line">    &#125;</div><div class="line"> </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> WifiApControl <span class="title">getApControl</span><span class="params">(WifiManager mgr)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> (!isApSupported())</div><div class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">new</span> WifiApControl(mgr);</div><div class="line">    &#125;</div><div class="line"> </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isWifiApEnabled</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            <span class="keyword">return</span> (Boolean) isWifiApEnabled.invoke(mgr);</div><div class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</div><div class="line">            Log.v(<span class="string">"BatPhone"</span>, e.toString(), e); <span class="comment">// shouldn't happen</span></div><div class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"> </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getWifiApState</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            <span class="keyword">return</span> (Integer) getWifiApState.invoke(mgr);</div><div class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</div><div class="line">            Log.v(<span class="string">"BatPhone"</span>, e.toString(), e); <span class="comment">// shouldn't happen</span></div><div class="line">            <span class="keyword">return</span> -<span class="number">1</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"> </div><div class="line">    <span class="function"><span class="keyword">public</span> WifiConfiguration <span class="title">getWifiApConfiguration</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            <span class="keyword">return</span> (WifiConfiguration) getWifiApConfiguration.invoke(mgr);</div><div class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</div><div class="line">            Log.v(<span class="string">"BatPhone"</span>, e.toString(), e); <span class="comment">// shouldn't happen</span></div><div class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"> </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">setWifiApEnabled</span><span class="params">(WifiConfiguration config, <span class="keyword">boolean</span> enabled)</span> </span>&#123;</div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            <span class="keyword">return</span> (Boolean) setWifiApEnabled.invoke(mgr, config, enabled);</div><div class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</div><div class="line">            Log.v(<span class="string">"BatPhone"</span>, e.toString(), e); <span class="comment">// shouldn't happen</span></div><div class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="代码分析"><a href="#代码分析" class="headerlink" title="代码分析"></a>代码分析</h2><p>通过反射机制，可以看出来在WifiApControl中是为了获得WifiManager类中的<code>getWifiApState</code>、<code>isWifiApEnabled</code>、<code>setWifiApEnabled</code>、<code>getWifiApConfiguration</code>这四个方法。但是其中WifiManager中没有这些方法么？我们具体点开可以看看，以下是代码中显示的WifiManager的所有方法：</p>
+<p><div style="text-align:center"><img src="https://vensent.github.io/img/WifiManager_Methods.jpg"></div><br>而以上四种方法是都没有的。<br>那没有的话为什么可以获取到呢？我们通过调试进入断点看一看：</p>
+<p><div style="text-align:center"><img src="https://vensent.github.io/img/WifiManager_nameList_1.jpg"><img src="https://vensent.github.io/img/WifiManager_nameList_2.jpg"></div><br>可以看出在用反射机制去获得WifiManager中的所有方法的时候，是可以得到的这四个方法的。<br>那么究竟是怎么一回事呢？</p>
+<h2 id="原因分析"><a href="#原因分析" class="headerlink" title="原因分析"></a>原因分析</h2><p>进入Android的platform_framworks_base的源码去看一下。代码在这里也可以看到：<a href="https://github.com/android/platform_frameworks_base/blob/master/wifi/java/android/net/wifi/WifiManager.java" rel="external nofollow noopener noreferrer" target="_blank">WifiManager.java</a>。<br>以<code>getWifiApState</code>为例，其中定义代码在如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Gets the Wi-Fi enabled state.</div><div class="line"> * <span class="doctag">@return</span> One of &#123;<span class="doctag">@link</span> #WIFI_AP_STATE_DISABLED&#125;,</div><div class="line"> *         &#123;<span class="doctag">@link</span> #WIFI_AP_STATE_DISABLING&#125;, &#123;<span class="doctag">@link</span> #WIFI_AP_STATE_ENABLED&#125;,</div><div class="line"> *         &#123;<span class="doctag">@link</span> #WIFI_AP_STATE_ENABLING&#125;, &#123;<span class="doctag">@link</span> #WIFI_AP_STATE_FAILED&#125;</div><div class="line"> * <span class="doctag">@see</span> #isWifiApEnabled()</div><div class="line"> *</div><div class="line"> * <span class="doctag">@hide</span> Dont open yet</div><div class="line"> */</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getWifiApState</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">try</span> &#123;</div><div class="line">        <span class="keyword">return</span> mService.getWifiApEnabledState();</div><div class="line">    &#125; <span class="keyword">catch</span> (RemoteException e) &#123;</div><div class="line">        <span class="keyword">return</span> WIFI_AP_STATE_FAILED;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>其中在注释中的<code>@hide Dont open yet</code>是就是我们找到的原因。原来API自己把这些方法隐藏了。而在Eclipse中通过.class的反编译的结果查看的时候是看不到这些方法的。<br>笔者猜测Google这样做的原因可能是因为这些API属于内部逻辑，不想对外暴露，也有可能是API接口还未最终确定下来。所以在低版本Android上的隐藏API不一定能在高版本的Android上使用。这点是一定要注意的。也就说隐藏API的兼容性比较差。因此利用反射调用隐藏API时，一定要注意根据Android的版本采用不同的方式去反射。</p>
 
       
     </div>
@@ -459,13 +456,13 @@
     <div id="QR" style="display: none;">
       
         <div id="wechat" style="display: inline-block">
-          <img id="wechat_qr" src="http://ww1.sinaimg.cn/large/6d5c542dgy1fhdo3e6jgbj20yi1autdn.jpg" alt="Vensent Wang WeChat Pay"/>
+          <img id="wechat_qr" src="http://ww1.sinaimg.cn/large/6d5c542dgy1fhdo3e6jgbj20yi1autdn.jpg" alt="Vensent Wang WeChat Pay">
           <p>微信打赏</p>
         </div>
       
       
         <div id="alipay" style="display: inline-block">
-          <img id="alipay_qr" src="http://ww1.sinaimg.cn/large/6d5c542dgy1fhdo3uixw5j20go0p040q.jpg" alt="Vensent Wang Alipay"/>
+          <img id="alipay_qr" src="http://ww1.sinaimg.cn/large/6d5c542dgy1fhdo3uixw5j20go0p040q.jpg" alt="Vensent Wang Alipay">
           <p>支付宝打赏</p>
         </div>
       
@@ -484,11 +481,11 @@
 		  </li>
 		  <li class="post-copyright-link">
 			<strong>本文链接：</strong>
-			<a href="/2014/10/31/开始用信用卡的这一个月/" title="开始用信用卡的这一个月">2014/10/31/开始用信用卡的这一个月/</a>
+			<a href="/从Java的反射机制说开去-2.html" title="从Java的反射机制说开去-2">从Java的反射机制说开去-2.html</a>
 		  </li>
 		  <li class="post-copyright-license">
 			<strong>版权声明： </strong>
-			本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0 CN</a> 许可协议。转载请注明出处！
+			本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" rel="external nofollow noopener noreferrer" target="_blank">CC BY-NC-SA 3.0 CN</a> 许可协议。转载请注明出处！
 		  </li>
 		</ul>
       
@@ -498,7 +495,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/信用卡/" rel="tag"># 信用卡</a>
+            <a href="/tags/Java/" rel="tag"># Java</a>
+          
+            <a href="/tags/反射机制/" rel="tag"># 反射机制</a>
           
         </div>
       
@@ -511,8 +510,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2014/10/21/浏览器的那些事儿/" rel="next" title="浏览器的那些事儿">
-                <i class="fa fa-chevron-left"></i> 浏览器的那些事儿
+              <a href="/从Java的反射机制说开去-1.html" rel="next" title="从Java的反射机制说开去-1">
+                <i class="fa fa-chevron-left"></i> 从Java的反射机制说开去-1
               </a>
             
           </div>
@@ -521,8 +520,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/03/23/当“年”已渐渐远去/" rel="prev" title="当“年”已渐渐远去">
-                当“年”已渐渐远去 <i class="fa fa-chevron-right"></i>
+              <a href="/浏览器的那些事儿.html" rel="prev" title="浏览器的那些事儿">
+                浏览器的那些事儿 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -573,7 +572,7 @@
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
             文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
@@ -583,10 +582,8 @@
       
 
       <section class="site-overview sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="https://avatars0.githubusercontent.com/u/7401921?v=3&s=460"
-               alt="Vensent Wang" />
+        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="https://avatars0.githubusercontent.com/u/7401921?v=3&s=460" alt="Vensent Wang">
           <p class="site-author-name" itemprop="name">Vensent Wang</p>
            
               <p class="site-description motion-element" itemprop="description"></p>
@@ -640,7 +637,7 @@
           
             
               <span class="links-of-author-item">
-                <a href="https://github.com/Vensent" target="_blank" title="GitHub">
+                <a href="https://github.com/Vensent" target="_blank" title="GitHub" rel="external nofollow noopener noreferrer">
                   
                     <i class="fa fa-fw fa-github"></i>
                   
@@ -649,7 +646,7 @@
               </span>
             
               <span class="links-of-author-item">
-                <a href="https://stackoverflow.com/users/3998710/vensent-wang" target="_blank" title="SOF">
+                <a href="https://stackoverflow.com/users/3998710/vensent-wang" target="_blank" title="SOF" rel="external nofollow noopener noreferrer">
                   
                     <i class="fa fa-fw fa-globe"></i>
                   
@@ -658,7 +655,7 @@
               </span>
             
               <span class="links-of-author-item">
-                <a href="http://weibo.com/vensentwang" target="_blank" title="微博">
+                <a href="http://weibo.com/vensentwang" target="_blank" title="微博" rel="external nofollow noopener noreferrer">
                   
                     <i class="fa fa-fw fa-globe"></i>
                   
@@ -667,7 +664,7 @@
               </span>
             
               <span class="links-of-author-item">
-                <a href="https://www.douban.com/people/vensent_wang/" target="_blank" title="豆瓣">
+                <a href="https://www.douban.com/people/vensent_wang/" target="_blank" title="豆瓣" rel="external nofollow noopener noreferrer">
                   
                     <i class="fa fa-fw fa-globe"></i>
                   
@@ -691,11 +688,11 @@
             <ul class="links-of-blogroll-list">
               
                 <li class="links-of-blogroll-item">
-                  <a href="http://www.thankcreate.com" title="ThankCreate" target="_blank">ThankCreate</a>
+                  <a href="http://www.thankcreate.com" title="ThankCreate" target="_blank" rel="external nofollow noopener noreferrer">ThankCreate</a>
                 </li>
               
                 <li class="links-of-blogroll-item">
-                  <a href="http://www.dian.org.cn" title="HUST Dian团队" target="_blank">HUST Dian团队</a>
+                  <a href="http://www.dian.org.cn" title="HUST Dian团队" target="_blank" rel="external nofollow noopener noreferrer">HUST Dian团队</a>
                 </li>
               
             </ul>
@@ -717,7 +714,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#写在前面"><span class="nav-number">1.</span> <span class="nav-text">写在前面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#信用卡的盈利来源"><span class="nav-number">2.</span> <span class="nav-text">信用卡的盈利来源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#信用卡与经济"><span class="nav-number">3.</span> <span class="nav-text">信用卡与经济</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#信用卡的好处"><span class="nav-number">4.</span> <span class="nav-text">信用卡的好处</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#取钱的时候少了"><span class="nav-number">4.1.</span> <span class="nav-text">取钱的时候少了</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#积分送好礼"><span class="nav-number">4.2.</span> <span class="nav-text">积分送好礼</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分期付款"><span class="nav-number">4.3.</span> <span class="nav-text">分期付款</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#还款方便"><span class="nav-number">4.4.</span> <span class="nav-text">还款方便</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Android-Hotspot的使用"><span class="nav-number">1.</span> <span class="nav-text">Android Hotspot的使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#调用的代码"><span class="nav-number">2.</span> <span class="nav-text">调用的代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码分析"><span class="nav-number">3.</span> <span class="nav-text">代码分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原因分析"><span class="nav-number">4.</span> <span class="nav-text">原因分析</span></a></li></ol></div>
             
 
           </div>
@@ -737,7 +734,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
+        <div class="copyright">
   
   &copy;  2015 - 
   <span itemprop="copyrightYear">2017</span>
@@ -749,12 +746,12 @@
 
 
 <div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+  由 <a class="theme-link" href="https://hexo.io" rel="external nofollow noopener noreferrer" target="_blank">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
   主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" rel="external nofollow noopener noreferrer" target="_blank">
     NexT.Pisces
   </a>
 </div>

@@ -7,9 +7,9 @@
 
 <html class="theme-next pisces use-motion" lang="zh-Hans">
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
@@ -19,8 +19,8 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -40,7 +40,7 @@
   
     
   
-  <link href="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
+  <link href="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
 
 
 
@@ -76,51 +76,40 @@
 
   
 
-<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="骑行," />
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css">
 
 
-
-
-
-  <link rel="alternate" href="/atom.xml" title="Vensent's Blog" type="application/atom+xml" />
-
-
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+  <meta name="keywords" content="Java,反射机制,">
 
 
 
 
 
+  <link rel="alternate" href="/atom.xml" title="Vensent's Blog" type="application/atom+xml">
 
-<meta name="description" content="写在前面秋高气爽，正是一年中户外骑行最好的季节。南京的夏季没有想象中那样炎热。从东莞产线实习结束来到南京，没有几天出过太阳。天气不晴朗，也未见过蓝天，青奥之后，关于“南京空气不好”的传言也越来越开始变成事实。中秋信用卡到了之后，也去买了一辆自行车，一来方便每早骑车上班，不挤地铁，同时也可以多个十来分钟的睡眠。车子倒是一般，花了不到两千，买车时给老板说买个“入门级”就好，老板扫了我一眼，“现在入门级">
-<meta name="keywords" content="骑行">
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1">
+
+
+
+
+
+
+<meta name="description" content="最近在写Android的时候用到了一些关于Java反射机制的内容。Java的反射机制也是在面试过程中常考的，这里就好好地将它们回顾一下。 什么是Java的反射机制Java比起其他的语言，最大的特点就是“面向对象”。而怎么合理地理解“面向对象”的概念则是需要大量的编程练习的积累。通俗地说，反射机制就是可以把一个类，类的成员（函数、变量），当成一个对象来操作，希望读者能理解。也就是说，类、类的成员，在">
+<meta name="keywords" content="Java,反射机制">
 <meta property="og:type" content="article">
-<meta property="og:title" content="骑行记&lt;1&gt;——莺山">
-<meta property="og:url" content="http://vensent.github.io/2014/09/28/骑行记1——莺山/index.html">
+<meta property="og:title" content="从Java的反射机制说开去-1">
+<meta property="og:url" content="http://vensent.github.io/从Java的反射机制说开去-1.html">
 <meta property="og:site_name" content="Vensent&#39;s Blog">
-<meta property="og:description" content="写在前面秋高气爽，正是一年中户外骑行最好的季节。南京的夏季没有想象中那样炎热。从东莞产线实习结束来到南京，没有几天出过太阳。天气不晴朗，也未见过蓝天，青奥之后，关于“南京空气不好”的传言也越来越开始变成事实。中秋信用卡到了之后，也去买了一辆自行车，一来方便每早骑车上班，不挤地铁，同时也可以多个十来分钟的睡眠。车子倒是一般，花了不到两千，买车时给老板说买个“入门级”就好，老板扫了我一眼，“现在入门级">
-<meta property="og:image" content="http://ww3.sinaimg.cn/large/6d5c542dgw1ekx6uv54qhj20bb0e7gmy.jpg">
-<meta property="og:image" content="http://ww2.sinaimg.cn/large/6d5c542dgw1ekx780gcimj21kw16oe81.jpg">
-<meta property="og:image" content="http://ww3.sinaimg.cn/large/6d5c542dgw1ekx77fwer9j21kw16ob29.jpg">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/6d5c542dgw1ekx7iwz2xuj21kw16okjl.jpg">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/6d5c542dgw1ekx7cdtx23j21kw16oquk.jpg">
-<meta property="og:image" content="http://ww2.sinaimg.cn/large/6d5c542dgw1ekx7cquev9j21kw16okfz.jpg">
-<meta property="og:image" content="http://ww4.sinaimg.cn/large/6d5c542dgw1ekx7cnfr9ej21kw16oavs.jpg">
-<meta property="og:image" content="http://ww3.sinaimg.cn/large/6d5c542dgw1ekx7imlp07j21kw16o4qp.jpg">
-<meta property="og:image" content="http://ww3.sinaimg.cn/large/6d5c542dgw1ekx7fs2z87j21kw16ox0t.jpg">
-<meta property="og:image" content="http://ww2.sinaimg.cn/large/6d5c542dgw1ekx7i42tfjj21kw16okau.jpg">
-<meta property="og:updated_time" content="2017-07-09T06:59:28.013Z">
+<meta property="og:description" content="最近在写Android的时候用到了一些关于Java反射机制的内容。Java的反射机制也是在面试过程中常考的，这里就好好地将它们回顾一下。 什么是Java的反射机制Java比起其他的语言，最大的特点就是“面向对象”。而怎么合理地理解“面向对象”的概念则是需要大量的编程练习的积累。通俗地说，反射机制就是可以把一个类，类的成员（函数、变量），当成一个对象来操作，希望读者能理解。也就是说，类、类的成员，在">
+<meta property="og:updated_time" content="2017-07-11T03:24:16.280Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="骑行记&lt;1&gt;——莺山">
-<meta name="twitter:description" content="写在前面秋高气爽，正是一年中户外骑行最好的季节。南京的夏季没有想象中那样炎热。从东莞产线实习结束来到南京，没有几天出过太阳。天气不晴朗，也未见过蓝天，青奥之后，关于“南京空气不好”的传言也越来越开始变成事实。中秋信用卡到了之后，也去买了一辆自行车，一来方便每早骑车上班，不挤地铁，同时也可以多个十来分钟的睡眠。车子倒是一般，花了不到两千，买车时给老板说买个“入门级”就好，老板扫了我一眼，“现在入门级">
-<meta name="twitter:image" content="http://ww3.sinaimg.cn/large/6d5c542dgw1ekx6uv54qhj20bb0e7gmy.jpg">
+<meta name="twitter:title" content="从Java的反射机制说开去-1">
+<meta name="twitter:description" content="最近在写Android的时候用到了一些关于Java反射机制的内容。Java的反射机制也是在面试过程中常考的，这里就好好地将它们回顾一下。 什么是Java的反射机制Java比起其他的语言，最大的特点就是“面向对象”。而怎么合理地理解“面向对象”的概念则是需要大量的编程练习的积累。通俗地说，反射机制就是可以把一个类，类的成员（函数、变量），当成一个对象来操作，希望读者能理解。也就是说，类、类的成员，在">
 
 
 
@@ -148,13 +137,13 @@
 
 
 
-  <link rel="canonical" href="http://vensent.github.io/2014/09/28/骑行记1——莺山/"/>
+  <link rel="canonical" href="http://vensent.github.io/从Java的反射机制说开去-1.html">
 
 
 
 
 
-  <title>骑行记<1>——莺山 | Vensent's Blog</title>
+  <title>从Java的反射机制说开去-1 | Vensent's Blog</title>
   
 
 
@@ -182,7 +171,7 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
   
@@ -192,13 +181,13 @@
   <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">Vensent's Blog</span>
         <span class="logo-line-after"><i></i></span>
@@ -228,7 +217,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
             首页
           </a>
@@ -238,7 +227,7 @@
         <li class="menu-item menu-item-categories">
           <a href="/categories/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
             
             分类
           </a>
@@ -248,7 +237,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
             归档
           </a>
@@ -258,7 +247,7 @@
         <li class="menu-item menu-item-tags">
           <a href="/tags/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
             
             标签
           </a>
@@ -268,7 +257,7 @@
         <li class="menu-item menu-item-about">
           <a href="/about/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
             
             关于
           </a>
@@ -281,7 +270,7 @@
             <a href="javascript:;" class="popup-trigger">
           
             
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
             
             搜索
           </a>
@@ -302,9 +291,7 @@
       <i class="fa fa-times-circle"></i>
     </span>
     <div class="local-search-input-wrapper">
-      <input autocomplete="off"
-             placeholder="搜索..." spellcheck="false"
-             type="text" id="local-search-input">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
     </div>
   </div>
   <div id="local-search-result"></div>
@@ -336,16 +323,16 @@
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://vensent.github.io/2014/09/28/骑行记1——莺山/">
+  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://vensent.github.io/从Java的反射机制说开去-1.html">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Vensent Wang">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/7401921?v=3&s=460">
     </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Vensent's Blog">
     </span>
 
@@ -354,7 +341,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">骑行记<1>——莺山</h2>
+          <h2 class="post-title" itemprop="name headline">从Java的反射机制说开去-1</h2>
         
 
         <div class="post-meta">
@@ -366,8 +353,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2014-09-28T21:28:59+08:00">
-                Sep 28 2014
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2014-10-10T11:09:28+08:00">
+                Oct 10 2014
               </time>
             
 
@@ -377,7 +364,7 @@
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
             
               <span class="post-meta-divider">|</span>
             
@@ -388,9 +375,9 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/骑行/" itemprop="url" rel="index">
-                    <span itemprop="name">骑行</span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
                   </a>
                 </span>
 
@@ -406,7 +393,7 @@
 
           
           
-             <span id="/2014/09/28/骑行记1——莺山/" class="leancloud_visitors" data-flag-title="骑行记<1>——莺山">
+             <span id="/从Java的反射机制说开去-1.html" class="leancloud_visitors" data-flag-title="从Java的反射机制说开去-1">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -434,12 +421,15 @@
       
 
       
-        <h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>秋高气爽，正是一年中户外骑行最好的季节。<br>南京的夏季没有想象中那样炎热。从东莞产线实习结束来到南京，没有几天出过太阳。天气不晴朗，也未见过蓝天，青奥之后，关于“南京空气不好”的传言也越来越开始变成事实。<br>中秋信用卡到了之后，也去买了一辆自行车，一来方便每早骑车上班，不挤地铁，同时也可以多个十来分钟的睡眠。车子倒是一般，花了不到两千，买车时给老板说买个“入门级”就好，老板扫了我一眼，“现在入门级也差不多两三千左右。”所以，一辆美利达的雄狮，因可观的性价比被我选中。<br>这周末也就是自行车刚到手，还没有去把一些必要的装备买齐，趁着兴头，和同事一行四人骑车出行了。首次出行距离也不远，全程大概80公里左右，一路除去各种辛苦劳累，乐趣也自在其中。    <a id="more"></a></p>
-<h2 id="骑行路线"><a href="#骑行路线" class="headerlink" title="骑行路线"></a>骑行路线</h2><p>骑行选择是西善桥——205国道——106县道——337省道——莺山，然后转入将军大道，一路骑行并返回，大部分骑行时间是在江宁区中。<!--more-->       </p>
-<div style="text-align:center"><img src="http://ww3.sinaimg.cn/large/6d5c542dgw1ekx6uv54qhj20bb0e7gmy.jpg"></div><br>西善桥出来之后，骑入了205国道之后，一路的标识也非常多，很多也是直接指明了到马鞍山的距离。当年在华科读书的时候背后的那个“马鞍山森林公园”是我们则正几乎是我们所有华科人烧烤野炊的圣地；除此之外，好友天林的老家也在这个马鞍山。不过此行的目的地并不在马鞍山，所以转入106县道之后就可以与马鞍山越来越远了。<br>不得不说，秋天骑行的确是非常舒服的。没有夏季的炎热，衣服宽松，微微发汗，不至于浸湿。不过在县道上骑行也确实蛋疼，上下坡间隔，沿途也是沙尘飞扬。有些装备看来也是要买了才是。在路边碰到卖香瓜的一个大姐，香瓜倒是和我家乡的味道无二，个大、香甜，我们停下也同时帮大姐招揽了不少沿途的汽车司机。<br><div style="text-align:center"><img src="http://ww2.sinaimg.cn/large/6d5c542dgw1ekx780gcimj21kw16oe81.jpg"></div><br><div style="text-align:center"><img src="http://ww3.sinaimg.cn/large/6d5c542dgw1ekx77fwer9j21kw16ob29.jpg"></div><br>转入337省道，路面开始宽敞，沿途各类农作物基地开始出现，接近莺山附近，农家乐多起来。愈近中午，肚子也越饿，哈哈。<br><div style="text-align:center"><img src="http://ww1.sinaimg.cn/large/6d5c542dgw1ekx7iwz2xuj21kw16okjl.jpg"></div><br>直到转入了将军大道，我们才开始了今天的中饭。插一句，这个将军大道真是纵贯江宁南北啊，下午回去就一直只在将军大道上面骑了。中饭我们就着路边的一个小馆子吃的，小份的酸菜鱼各种赞，鱼汤也喝了好几碗。另外的小炒肉也行。价格也还好，四个人四个菜79元。<br><div style="text-align:center"><img src="http://ww1.sinaimg.cn/large/6d5c542dgw1ekx7cdtx23j21kw16oquk.jpg"></div><br><div style="text-align:center"><img src="http://ww2.sinaimg.cn/large/6d5c542dgw1ekx7cquev9j21kw16okfz.jpg"></div><br><div style="text-align:center"><img src="http://ww4.sinaimg.cn/large/6d5c542dgw1ekx7cnfr9ej21kw16oavs.jpg"></div><br>下午本来是想经过牛首山风景区返回的，但是一看路线离南京航天航空大学已经很近了，大家也一致同意去南航看看。所以一路沿着将军大道往北，沿途也经过了河海大学在江宁的校区，也到了南航。想到这里是雀哥的母校，不禁赶紧掏出手机来了几张到此一游照。<br><div style="text-align:center"><img src="http://ww3.sinaimg.cn/large/6d5c542dgw1ekx7imlp07j21kw16o4qp.jpg"></div><br>不过说实话，雀哥母校也忒抠门小气，骑个车的还不让进学校。西门北门都不让，所以里面究竟长啥样有多大就不得而知了。但是经过了学校门口也有其他的好处，哈哈，站门口的美女还是见着不少。工作了之后才发现，要看漂亮姑娘还是得去学校啊。（泪）<br><div style="text-align:center"><img src="http://ww3.sinaimg.cn/large/6d5c542dgw1ekx7fs2z87j21kw16ox0t.jpg"></div>       
-
-<h2 id="感个想"><a href="#感个想" class="headerlink" title="感个想"></a>感个想</h2><p>最后赶回的路上沿河骑的，后来我在网上查了一下，这河的下游就是秦淮。所以这上游的这段，是不是也是秦淮呢。当时要是知道是这样我一定要赋诗一首，想当年，夜泊秦淮，宿醉江岸，多少也是我的一个梦想之一啊。<br>骑游处子行，顺利结束。不过念着酸疼的菊花，还是要说，坐垫软套还是该买了，其他什么的，码表、手套、护目镜等等，骑行的装备真的还需要再全面一点才行。无论什么季节，出门防晒霜还是要涂一些。之前一直没有涂防晒霜的习惯，直到工作入职培训在海边晒伤，才意识到防晒的重要性。<br>期待今后的骑行。</p>
-<div style="text-align:center"><img src="http://ww2.sinaimg.cn/large/6d5c542dgw1ekx7i42tfjj21kw16okau.jpg"></div>
+        <p>最近在写Android的时候用到了一些关于Java反射机制的内容。Java的反射机制也是在面试过程中常考的，这里就好好地将它们回顾一下。</p>
+<h2 id="什么是Java的反射机制"><a href="#什么是Java的反射机制" class="headerlink" title="什么是Java的反射机制"></a>什么是Java的反射机制</h2><p>Java比起其他的语言，最大的特点就是“面向对象”。而怎么合理地理解“面向对象”的概念则是需要大量的编程练习的积累。<br>通俗地说，反射机制就是可以把一个类，类的成员（函数、变量），当成一个对象来操作，希望读者能理解。也就是说，类、类的成员，在运行需要的时候可以动态地去操作它们。<br>下面就用一个例子来具体地说明。</p>
+<h2 id="反射机制的Demo"><a href="#反射机制的Demo" class="headerlink" title="反射机制的Demo"></a>反射机制的Demo</h2><p>在这里只就类的函数的反射来说明一下。<br>先是一个自己写的Student类，无须赘述：        <a id="more"></a><br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>&#123;</div><div class="line"></div><div class="line">	<span class="keyword">private</span> String name;</div><div class="line">	<span class="keyword">private</span> <span class="keyword">int</span> age;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> name;</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</div><div class="line">		<span class="keyword">this</span>.name = name;</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> age;</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(<span class="keyword">int</span> age)</span> </span>&#123;</div><div class="line">		<span class="keyword">this</span>.age = age;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Student</span><span class="params">()</span></span></div><div class="line">	&#123;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">print</span><span class="params">()</span></span></div><div class="line">	&#123;</div><div class="line">		System.out.println(<span class="string">"This Student is: "</span> + name + <span class="string">","</span>);</div><div class="line">		System.out.println(<span class="string">"This Student is "</span> + age + <span class="string">" years old."</span>);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>接下来就是关于反射的使用：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</div><div class="line"></div><div class="line">	<span class="comment">/**</span></div><div class="line">	 * <span class="doctag">@param</span> args</div><div class="line">	 */</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line"></div><div class="line">		<span class="keyword">try</span> &#123;</div><div class="line">		    <span class="comment">// 第一步：new一个Student，这一步不可少</span></div><div class="line">			Student demoStudent = <span class="keyword">new</span> Student();</div><div class="line">			<span class="comment">// 第二步：通过Class类来实现的反射机制，所以需要获得Student的Class</span></div><div class="line">			Class&lt;Student&gt; studentClass = Student.class;</div><div class="line">			<span class="comment">// 或者通过包名forName来获得：</span></div><div class="line">			<span class="comment">// Class&lt;?&gt; studentClass = Class.forName("com.test.inflect.Student");</span></div><div class="line">			<span class="comment">// 第三步：构造需要调用的方法的参数</span></div><div class="line">			Class nameArea = String.class;</div><div class="line">			Class ageArea = <span class="keyword">int</span>.class;</div><div class="line">			<span class="comment">// 第四步：使用getDeclaredMethod，这步是反射机制的精髓。该方法的参数分别是要获得的方法名，以及要获得的方法的参数类型，前者是String类型，后者是Class&lt;?&gt;类型</span></div><div class="line">			Method setNameMethod = studentClass.getDeclaredMethod(<span class="string">"setName"</span>, nameArea);</div><div class="line">			Method setAgeMethod = studentClass.getDeclaredMethod(<span class="string">"setAge"</span>, ageArea);</div><div class="line">			Method printMethod = studentClass.getDeclaredMethod(<span class="string">"print"</span>, (Class[]) <span class="keyword">null</span>);</div><div class="line">			<span class="comment">// setAccessible(true)并不一定需要，因为默认的就是true.</span></div><div class="line">			printMethod.setAccessible(<span class="keyword">true</span>);</div><div class="line">			setAgeMethod.setAccessible(<span class="keyword">true</span>);</div><div class="line">			setNameMethod.setAccessible(<span class="keyword">true</span>);</div><div class="line">			</div><div class="line">			<span class="comment">// 第五步：使用invoke调用方法。第一个参数是调用方法的发出者，后面的参数则依次是调用的方法的参数</span></div><div class="line">			setNameMethod.invoke(demoStudent, <span class="string">"Vensent"</span>);</div><div class="line">			setAgeMethod.invoke(demoStudent, <span class="number">23</span>);</div><div class="line">			printMethod.invoke(demoStudent, (Object[]) <span class="keyword">null</span>);</div><div class="line">		&#125; <span class="keyword">catch</span> (Exception e) &#123;</div><div class="line">			e.printStackTrace();</div><div class="line">		&#125; 		</div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>运行上述测试代码，可以得到如下结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">This Student is: Vensent,</div><div class="line">This Student is 23 years old.</div></pre></td></tr></table></figure></p>
+<h2 id="疑惑"><a href="#疑惑" class="headerlink" title="疑惑"></a>疑惑</h2><p>细心的读者可能会发现在上述的例子中，如果我们直接使用<code>demoStudent.setName(String)</code>、<code>demoStudent.setAge(int)</code>、<code>demoStudent.print()</code>不就完事了么，为什么还要去用什么反射机制？劳神费力不说，getDeclaredMethod、invoke还这么复杂，稍不留神就可能用错。<br>笔者一开始也是这样想的，而且这样的想法也持续了很长的时间。到底反射机制是在什么样的情况下可以使用的？<br>而在最近写Android的代码的时候却多次碰到了这种情况。通过下面一个例子来具体说明。        </p>
+<h2 id="反射用途1——冲破private的限制"><a href="#反射用途1——冲破private的限制" class="headerlink" title="反射用途1——冲破private的限制"></a>反射用途1——冲破private的限制</h2><p>假设我们在上述的Student代码中将两个set的方法变为private，如下所示：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>&#123;</div><div class="line"></div><div class="line">	<span class="keyword">private</span> String name;</div><div class="line">	<span class="keyword">private</span> <span class="keyword">int</span> age;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> name;</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</div><div class="line">		<span class="keyword">this</span>.name = name;</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> age;</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(<span class="keyword">int</span> age)</span> </span>&#123;</div><div class="line">		<span class="keyword">this</span>.age = age;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Student</span><span class="params">()</span></span></div><div class="line">	&#123;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">print</span><span class="params">()</span></span></div><div class="line">	&#123;</div><div class="line">		System.out.println(<span class="string">"This Student is: "</span> + name + <span class="string">","</span>);</div><div class="line">		System.out.println(<span class="string">"This Student is "</span> + age + <span class="string">" years old."</span>);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>没错，看到这里读者可能有一种恍然大悟的感觉。如果将两个set方法都换成了private来修饰的话，那么name和age两个成员变量是无法通过demoStudent直接调用set方法来进行赋值的了。<br>但是我们同样执行上述Test代码依然可以得到以下相同的结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">This Student is: Vensent,</div><div class="line">This Student is 23 years old.</div></pre></td></tr></table></figure></p>
+<p>这样做就冲破了代码中private的限制而可以调用到private方法。通过这样的方法绕过了安全的检查，好像多少有一点不安全的感觉。<br>例如上述的做法在实际的操作中还有很多的，读者在自己编程中可以多留意。<br>以上完成了第一节的内容，请继续阅读：<a href="http://vensent.github.io/2014/10/10/%E4%BB%8EJava%E7%9A%84%E5%8F%8D%E5%B0%84%E6%9C%BA%E5%88%B6%E8%AF%B4%E5%BC%80%E5%8E%BB-2/">从Java的反射机制说开去<2></2></a>。</p>
 
       
     </div>
@@ -462,13 +452,13 @@
     <div id="QR" style="display: none;">
       
         <div id="wechat" style="display: inline-block">
-          <img id="wechat_qr" src="http://ww1.sinaimg.cn/large/6d5c542dgy1fhdo3e6jgbj20yi1autdn.jpg" alt="Vensent Wang WeChat Pay"/>
+          <img id="wechat_qr" src="http://ww1.sinaimg.cn/large/6d5c542dgy1fhdo3e6jgbj20yi1autdn.jpg" alt="Vensent Wang WeChat Pay">
           <p>微信打赏</p>
         </div>
       
       
         <div id="alipay" style="display: inline-block">
-          <img id="alipay_qr" src="http://ww1.sinaimg.cn/large/6d5c542dgy1fhdo3uixw5j20go0p040q.jpg" alt="Vensent Wang Alipay"/>
+          <img id="alipay_qr" src="http://ww1.sinaimg.cn/large/6d5c542dgy1fhdo3uixw5j20go0p040q.jpg" alt="Vensent Wang Alipay">
           <p>支付宝打赏</p>
         </div>
       
@@ -487,11 +477,11 @@
 		  </li>
 		  <li class="post-copyright-link">
 			<strong>本文链接：</strong>
-			<a href="/2014/09/28/骑行记1——莺山/" title="骑行记<1>——莺山">2014/09/28/骑行记1——莺山/</a>
+			<a href="/从Java的反射机制说开去-1.html" title="从Java的反射机制说开去-1">从Java的反射机制说开去-1.html</a>
 		  </li>
 		  <li class="post-copyright-license">
 			<strong>版权声明： </strong>
-			本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0 CN</a> 许可协议。转载请注明出处！
+			本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" rel="external nofollow noopener noreferrer" target="_blank">CC BY-NC-SA 3.0 CN</a> 许可协议。转载请注明出处！
 		  </li>
 		</ul>
       
@@ -501,7 +491,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/骑行/" rel="tag"># 骑行</a>
+            <a href="/tags/Java/" rel="tag"># Java</a>
+          
+            <a href="/tags/反射机制/" rel="tag"># 反射机制</a>
           
         </div>
       
@@ -514,8 +506,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2014/09/23/关于问题“重度游戏患者该如何找女朋友”/" rel="next" title="关于问题“重度游戏患者该如何找女朋友”">
-                <i class="fa fa-chevron-left"></i> 关于问题“重度游戏患者该如何找女朋友”
+              <a href="/心花路放——开到荼蘼又何妨.html" rel="next" title="心花路放——开到荼蘼又何妨">
+                <i class="fa fa-chevron-left"></i> 心花路放——开到荼蘼又何妨
               </a>
             
           </div>
@@ -524,8 +516,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2014/10/02/心花路放——开到荼蘼又何妨/" rel="prev" title="心花路放——开到荼蘼又何妨">
-                心花路放——开到荼蘼又何妨 <i class="fa fa-chevron-right"></i>
+              <a href="/从Java的反射机制说开去-2.html" rel="prev" title="从Java的反射机制说开去-2">
+                从Java的反射机制说开去-2 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -576,7 +568,7 @@
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
             文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
@@ -586,10 +578,8 @@
       
 
       <section class="site-overview sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="https://avatars0.githubusercontent.com/u/7401921?v=3&s=460"
-               alt="Vensent Wang" />
+        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="https://avatars0.githubusercontent.com/u/7401921?v=3&s=460" alt="Vensent Wang">
           <p class="site-author-name" itemprop="name">Vensent Wang</p>
            
               <p class="site-description motion-element" itemprop="description"></p>
@@ -643,7 +633,7 @@
           
             
               <span class="links-of-author-item">
-                <a href="https://github.com/Vensent" target="_blank" title="GitHub">
+                <a href="https://github.com/Vensent" target="_blank" title="GitHub" rel="external nofollow noopener noreferrer">
                   
                     <i class="fa fa-fw fa-github"></i>
                   
@@ -652,7 +642,7 @@
               </span>
             
               <span class="links-of-author-item">
-                <a href="https://stackoverflow.com/users/3998710/vensent-wang" target="_blank" title="SOF">
+                <a href="https://stackoverflow.com/users/3998710/vensent-wang" target="_blank" title="SOF" rel="external nofollow noopener noreferrer">
                   
                     <i class="fa fa-fw fa-globe"></i>
                   
@@ -661,7 +651,7 @@
               </span>
             
               <span class="links-of-author-item">
-                <a href="http://weibo.com/vensentwang" target="_blank" title="微博">
+                <a href="http://weibo.com/vensentwang" target="_blank" title="微博" rel="external nofollow noopener noreferrer">
                   
                     <i class="fa fa-fw fa-globe"></i>
                   
@@ -670,7 +660,7 @@
               </span>
             
               <span class="links-of-author-item">
-                <a href="https://www.douban.com/people/vensent_wang/" target="_blank" title="豆瓣">
+                <a href="https://www.douban.com/people/vensent_wang/" target="_blank" title="豆瓣" rel="external nofollow noopener noreferrer">
                   
                     <i class="fa fa-fw fa-globe"></i>
                   
@@ -694,11 +684,11 @@
             <ul class="links-of-blogroll-list">
               
                 <li class="links-of-blogroll-item">
-                  <a href="http://www.thankcreate.com" title="ThankCreate" target="_blank">ThankCreate</a>
+                  <a href="http://www.thankcreate.com" title="ThankCreate" target="_blank" rel="external nofollow noopener noreferrer">ThankCreate</a>
                 </li>
               
                 <li class="links-of-blogroll-item">
-                  <a href="http://www.dian.org.cn" title="HUST Dian团队" target="_blank">HUST Dian团队</a>
+                  <a href="http://www.dian.org.cn" title="HUST Dian团队" target="_blank" rel="external nofollow noopener noreferrer">HUST Dian团队</a>
                 </li>
               
             </ul>
@@ -720,7 +710,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#写在前面"><span class="nav-number">1.</span> <span class="nav-text">写在前面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#骑行路线"><span class="nav-number">2.</span> <span class="nav-text">骑行路线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#感个想"><span class="nav-number">3.</span> <span class="nav-text">感个想</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是Java的反射机制"><span class="nav-number">1.</span> <span class="nav-text">什么是Java的反射机制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#反射机制的Demo"><span class="nav-number">2.</span> <span class="nav-text">反射机制的Demo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#疑惑"><span class="nav-number">3.</span> <span class="nav-text">疑惑</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#反射用途1——冲破private的限制"><span class="nav-number">4.</span> <span class="nav-text">反射用途1——冲破private的限制</span></a></li></ol></div>
             
 
           </div>
@@ -740,7 +730,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
+        <div class="copyright">
   
   &copy;  2015 - 
   <span itemprop="copyrightYear">2017</span>
@@ -752,12 +742,12 @@
 
 
 <div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+  由 <a class="theme-link" href="https://hexo.io" rel="external nofollow noopener noreferrer" target="_blank">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
   主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" rel="external nofollow noopener noreferrer" target="_blank">
     NexT.Pisces
   </a>
 </div>
