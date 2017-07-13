@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://vensent.github.io/"/>
-  <updated>2017-07-13T08:57:50.783Z</updated>
+  <updated>2017-07-13T09:58:05.600Z</updated>
   <id>http://vensent.github.io/</id>
   
   <author>
@@ -20,18 +20,15 @@
     <link href="http://vensent.github.io/2016/07/20/FunTouch%20OS%203.0%20Recorder/"/>
     <id>http://vensent.github.io/2016/07/20/FunTouch OS 3.0 Recorder/</id>
     <published>2016-07-20T07:43:03.000Z</published>
-    <updated>2017-07-13T08:57:50.783Z</updated>
+    <updated>2017-07-13T09:58:05.600Z</updated>
     
     <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><p>上半年因为工作需要，开始接触公司的录音机开发。</p>
 <p>这次开发的外部代号是FunTouch OS 3.0，开发周期大概在三个月左右。也算是入职一年多笔者真正意义上独自一个人从设计、评审、开发，后续发版本跟进测试完成的一个项目。</p>
 <p>因为公司制度，很多东西并不能放到博客上面，本页面只是做展示用。如有读者感兴趣，或者对其中开发细节感兴趣，可以通过邮箱或者github联系到我。</p>
 <h2 id="录音机录制"><a href="#录音机录制" class="headerlink" title="录音机录制"></a>录音机录制</h2><a id="more"></a>
-<div style="text-align:center"><img src="http://ww1.sinaimg.cn/large/6d5c542dgy1fhicwi5ajcg21401z4npe.gif"></div>
-
-<h2 id="录音列表item切换动效"><a href="#录音列表item切换动效" class="headerlink" title="录音列表item切换动效"></a>录音列表item切换动效</h2><div style="text-align:center"><img src="http://ww1.sinaimg.cn/large/6d5c542dgy1fhid17t7y1g21401z41kz.gif"></div>
-
-<h2 id="录音列表编辑切换动效"><a href="#录音列表编辑切换动效" class="headerlink" title="录音列表编辑切换动效"></a>录音列表编辑切换动效</h2><div style="text-align:center"><img src="http://ww1.sinaimg.cn/large/6d5c542dgy1fhid1kozrug21401z44qr.gif"></div>
-
+<div id="dplayer0" class="dplayer" style="margin-bottom: 20px;"></div><script>var dplayer0 = new DPlayer({"element":document.getElementById("dplayer0"),"autoplay":false,"theme":"#FADFA3","loop":true,"video":{"url":"https://vensent.github.io/video/录音机录制.mp4","pic":"http://ww1.sinaimg.cn/large/6d5c542dgy1fhic2qp7gaj21401z4tce.jpg"}});</script>
+<h2 id="录音列表item切换动效"><a href="#录音列表item切换动效" class="headerlink" title="录音列表item切换动效"></a>录音列表item切换动效</h2><div id="dplayer1" class="dplayer" style="margin-bottom: 20px;"></div><script>var dplayer1 = new DPlayer({"element":document.getElementById("dplayer1"),"autoplay":false,"theme":"#FADFA3","loop":true,"video":{"url":"https://vensent.github.io/video/录音item之间切换.mp4","pic":"http://ww1.sinaimg.cn/large/6d5c542dgy1fhic3pummoj21401z4ah6.jpg"}});</script>
+<h2 id="录音列表编辑切换动效"><a href="#录音列表编辑切换动效" class="headerlink" title="录音列表编辑切换动效"></a>录音列表编辑切换动效</h2><div id="dplayer2" class="dplayer" style="margin-bottom: 20px;"></div><script>var dplayer2 = new DPlayer({"element":document.getElementById("dplayer2"),"autoplay":false,"theme":"#FADFA3","loop":true,"video":{"url":"https://vensent.github.io/video/录音机列表界面.mp4","pic":"http://ww1.sinaimg.cn/large/6d5c542dgy1fhic435vcjj21401z4q8m.jpg"}});</script>
 ]]></content>
     
     <summary type="html">

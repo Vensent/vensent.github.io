@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[FunTouch OS 3.0 Recorder]]></title>
     <url>%2F2016%2F07%2F20%2FFunTouch%20OS%203.0%20Recorder%2F</url>
-    <content type="text"><![CDATA[上半年因为工作需要，开始接触公司的录音机开发。 这次开发的外部代号是FunTouch OS 3.0，开发周期大概在三个月左右。也算是入职一年多笔者真正意义上独自一个人从设计、评审、开发，后续发版本跟进测试完成的一个项目。 因为公司制度，很多东西并不能放到博客上面，本页面只是做展示用。如有读者感兴趣，或者对其中开发细节感兴趣，可以通过邮箱或者github联系到我。 录音机录制 录音列表item切换动效 录音列表编辑切换动效]]></content>
+    <content type="text"><![CDATA[上半年因为工作需要，开始接触公司的录音机开发。 这次开发的外部代号是FunTouch OS 3.0，开发周期大概在三个月左右。也算是入职一年多笔者真正意义上独自一个人从设计、评审、开发，后续发版本跟进测试完成的一个项目。 因为公司制度，很多东西并不能放到博客上面，本页面只是做展示用。如有读者感兴趣，或者对其中开发细节感兴趣，可以通过邮箱或者github联系到我。 录音机录制 var dplayer0 = new DPlayer({"element":document.getElementById("dplayer0"),"autoplay":false,"theme":"#FADFA3","loop":true,"video":{"url":"https://vensent.github.io/video/录音机录制.mp4","pic":"http://ww1.sinaimg.cn/large/6d5c542dgy1fhic2qp7gaj21401z4tce.jpg"}}); 录音列表item切换动效var dplayer1 = new DPlayer({"element":document.getElementById("dplayer1"),"autoplay":false,"theme":"#FADFA3","loop":true,"video":{"url":"https://vensent.github.io/video/录音item之间切换.mp4","pic":"http://ww1.sinaimg.cn/large/6d5c542dgy1fhic3pummoj21401z4ah6.jpg"}}); 录音列表编辑切换动效var dplayer2 = new DPlayer({"element":document.getElementById("dplayer2"),"autoplay":false,"theme":"#FADFA3","loop":true,"video":{"url":"https://vensent.github.io/video/录音机列表界面.mp4","pic":"http://ww1.sinaimg.cn/large/6d5c542dgy1fhic435vcjj21401z4q8m.jpg"}});]]></content>
       <categories>
         <category>Android</category>
       </categories>
